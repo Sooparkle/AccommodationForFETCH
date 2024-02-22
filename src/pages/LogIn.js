@@ -17,9 +17,8 @@ export const Login = () =>{
   }
 
   return(
-    <div>
+    <>
       <div>로그인 페이지</div>
-
       <div className="login-wrap">
         <form onSubmit={()=>{handleOnSubmit()}}>
           {/* 아이디 입력폼 */}
@@ -46,6 +45,6 @@ export const Login = () =>{
             >로그인 하기</button>
         </form>
       </div>
-    </div>
+    </>
   )
 }
