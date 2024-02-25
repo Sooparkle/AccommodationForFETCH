@@ -1,18 +1,18 @@
 import { useState } from "react"
+import React from 'react';
+import { useSelector } from "react-redux";
 
 export const Login = () =>{
-
+  const isLoggedIn = useSelector(state => state.auth);
+  
   const [ inputEmail, setInputEmail, ] = useState(''); 
   const [ inputPw, setInputPw ] = useState(''); 
+
+  console.log("isLoggedIn", isLoggedIn);
 
 
   const handleOnSubmit = (e) =>{
     e.preventDefault();
-    
-    let body={
-      email :inputEmail,
-      password : inputPw
-    }
 
   }
 
