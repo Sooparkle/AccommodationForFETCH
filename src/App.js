@@ -5,7 +5,6 @@ import { Login } from './pages/LogIn';
 import { Main } from './pages/Main';
 import { Header } from './components/Header';
 import { Search } from './pages/Search';
-import { Mypage } from './pages/Mypage';
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/mypage" element={<Mypage />} /> 
       </Routes>
       </div>
     

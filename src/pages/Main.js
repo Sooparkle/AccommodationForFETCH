@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SearchForm } from "../components/searchForm";
+import { SearchForm } from "../components/SearchForm";
 import { DataList } from "../components/DataList";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
