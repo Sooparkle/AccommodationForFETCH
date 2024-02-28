@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {login } from "../store/authSlice";
+import { NaverAuth } from "./NaverAuth";
 
 export const LoginForm = () => {
   const [ inputEmail, setInputEmail, ] = useState(''); 
@@ -14,6 +15,7 @@ export const LoginForm = () => {
     dispatch(login())
 
   }
+
 
   return (
     <div className="login-wrap">
@@ -45,6 +47,7 @@ export const LoginForm = () => {
         </div>
         <button type="submit">로그인 하기</button>
       </form>
+      {NaverAuth()}
     </div>
   );
 };
