@@ -19,7 +19,7 @@ export const Main = () =>{
       <h1>Main : index page</h1>
       <SearchForm onClick={()=>{navigate("/")}}/>
       <button type="button" onClick={()=>{navigate("/search")}}>상세</button>
-        <DataList />
+      <DataList />
 
     </>
   )

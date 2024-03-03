@@ -15,6 +15,12 @@ export const MyprofileList =()=>{
         <p>예약중</p>
         <p>더보기</p>
       </div>
+      <button 
+        type="button"
+        onClick={()=>{}}
+      >
+        log Out
+      </button>
     </div>
   )
 
