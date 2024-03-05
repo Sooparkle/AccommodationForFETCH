@@ -8,13 +8,13 @@ return(
     <div className="header-wrap">
 
         <ul>
-          <li className="login">
-            <NavLink to="/login" >Login</NavLink>
+          <li className="header-logo">
+            <NavLink to="/" >logo</NavLink>
           </li>
-          <li className="logo">
-            <NavLink to="/" >Logo</NavLink>
+          <li className="header-seach">
+            <NavLink to="/search" >Search</NavLink>
           </li>
-          <li className="mypage">
+          <li className="header-mypage">
             <NavLink to="/mypage">My page</NavLink>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route} from "react-router-dom";
-import { Login } from './pages/LogIn';
+import { Mypage } from './pages/Mypage';
 import { Main } from './pages/Main';
 import { Header } from './components/Header';
 import { Search } from './pages/Search';
@@ -14,7 +14,7 @@ function App() {
       <Routes >
         <Route path="/" element={<Main />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
       </div>
     

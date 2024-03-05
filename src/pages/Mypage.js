@@ -1,10 +1,9 @@
-import { useState } from "react"
 import React from 'react';
 import { useSelector } from "react-redux";
 import { LoginForm } from "../components/LoginForm";
 import { MyprofileList } from "../components/Myprofile";
 
-export const Login = () =>{
+export const Mypage = () =>{
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   return(
