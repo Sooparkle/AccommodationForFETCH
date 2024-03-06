@@ -5,3 +5,4 @@
 - npm react-router-dom
 - npm redux
 - npm redux-react
+- npm react-calendar
