@@ -9,8 +9,6 @@ export const Main = () =>{
   const navigate = useNavigate();
 // DB에서 가져온 데이터 redux를 통해서 여기로 투하
 
-console.log("auth", auth)
-
 
   return (
     <>

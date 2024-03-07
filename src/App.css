@@ -1,27 +1,34 @@
 @import 'reset.css';
 :root{
---main-color : #00A699;
---light-color : #c7fff5;
---strong-color : #058077;
+  --main-color: 
 }
 
+h1{
+  font-size: 32px;
+}
+h2{
+  font-size: 26px;
+  margin-bottom: 10px;
+}
 
 button{
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+  background: #ffffff00;
 }
 
 button:hover{
   background: #999;
-
 }
+
 
 .main{
   width: 700px;
   display: grid;
   place-content: center;
-  place-items: center;
+  /* place-items: center; */
   margin-inline: auto;
+  padding-bottom: 80px;
 
   background: #dfdfdf;
 }
@@ -33,7 +40,7 @@ button:hover{
   position: fixed;
   bottom: 0;
   width:100%;
-  height: 60px;
+  height: 80px;
   display: grid;
   align-items: center;
 
@@ -41,12 +48,6 @@ button:hover{
   box-sizing: border-box;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 3;
-}
-
-
-.header-wrap img{
-  display: block;
-  width: 35px;
 }
 
 
@@ -64,23 +65,31 @@ button:hover{
 
   /* flex-direction: column;
   align-items: center; */
-  font-size: 16px;
+  font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.header-wrap a{
+  display: block;
+  width: 38px;
+}
 
+.header-search{
+  width:36px;
+}
 
-.header-wrap logo{
-  position: fixed;
-  bottom: 20px;
-  border-radius: 50%;
-  background: teal ;
+.header-myprofile{
+  width: 34px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.header-wrap .active{
+  display: block;
+  color : red
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -91,25 +100,46 @@ button:hover{
 
 
 /* Data List Component */
-.data-list-wrap {
+.data-list-area {
   display: grid;
-  place-content: center;
+  /* place-content: center; */
   position: relative;
   padding : 2rem 0 ;
-  grid-row-gap:20px;
+  grid-row-gap:54px;
+}
+
+.data-list-each{
+  /* grid-row: 1; */
+  /* grid-column: 1; */
+}
+
+.data-img-wrap{
+  width: 480px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .data-list-img{
   width:fit-content;
-  height: 60vmin;
+  object-fit: cover;
   grid-row: 1;
   grid-column: 1;
 
 }
 
 .data-list-detail{
-  grid-row:1;
-  grid-column: 1;
+  color : #999;
+  /* grid-row:1; */
+  /* grid-column: 1; */
+}
+
+.data-list-button{
+  display: block;
+  width: 100%;
+  height:48px;
+  border-radius: 8px;
+  margin-top : 20px;
+  cursor: pointer;
 }
 
 .data-list-event{
@@ -126,39 +156,65 @@ button:hover{
 
 
 
-/* mypage component */
-.mypage-dashboard{
+/* Data detail area */
+.detail-main{
+  width: 700px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  place-content: center;
+  /* place-items: center; */
+  margin-inline: auto;
+  padding-bottom: 80px;
 
+  background: #dfdfdf;
 }
 
-.favorite-wrap{
+.detail-header{
+  position:relative;
+  top:0;
+  left:0;
+  right:0;
+  max-width :700px;
+  height:64px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  padding:0  1.2rem;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  z-index: 1;
+}
+
+.detail-back-btn{
+  cursor: pointer;
+}
+
+.detail-area{
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap:20px;
+  /* place-content: center; */
+  position: relative;
+  padding : 2rem 24px ;
+  grid-row-gap:54px;
 }
 
-.favorite-img-wrap, .favorite-detail{
-  width:100%;
-  height: fit-content;
+.detail-button-area{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 700px;
+  height: 68px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  place-items: center;
+
+  background: #fff;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);;
+  z-index: 100;
 }
 
-.favorite-img-wrap{
-  overflow: hidden;
-}
-
-
-.favorite-img-wrap img{
-  width: 100px;
-}
-
-.favorite-info-title{
-  font-size: 18px;
-}
-
-.favorite-detail-button{
-  width:100%;
-  height: 30px;
-  border-radius: 6px;
+.detail-button{
+  width: 200px;
+  height:48px;
+  border-radius: 8px;
 }

@@ -8,9 +8,6 @@ export const SearchForm = () =>{
     setInputKey(inputRef.current.value);
   }
 
-  console.log("inputKey", inputKey)
-  console.log("inputRef", inputRef)
-
   return(
     <div>
       <form onSubmit={()=>{handleOnSubmit()}} >

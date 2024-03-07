@@ -1,26 +1,41 @@
 import { NavLink } from "react-router-dom";
-import  logo  from "../assets/Logo.svg";
-import searchLogo  from "../assets/search.svg";
-import  myProfile  from "../assets/profile.svg";
+import { ReactComponent as  Logo }  from "../assets/Logo.svg";
+import { ReactComponent as Search }  from "../assets/search.svg";
+import  { ReactComponent as MyProfile }  from "../assets/profile.svg";
+import React, { useState } from "react";
 
 export const Header = () => {
+  const [ active, setActive ] = useState(false);
   return (
     <>
       <div className="header-wrap">
         <ul>
           <li>
             <NavLink to="/search">
-              <img src={searchLogo} alt="검색" />
+              <Search  
+                fill="#fff" 
+                stroke="#999"
+                className="header-search"
+                // onClick={()=>{setActive(!active)}}
+              />
             </NavLink>
           </li>
           <li>
             <NavLink to="/">
-              <img src={logo} alt="홈" />
+              <Logo 
+                fill="#fff" 
+                stroke="#999"
+                // onClick={()=>{setActive(!active)}}
+              />
             </NavLink>
           </li>
           <li>
             <NavLink to="/mypage">
-              <img src={myProfile} alt="" />
+              <MyProfile 
+                fill="#fff" 
+                stroke="#999"
+                className="header-myprofile"
+                />
             </NavLink>
           </li>
         </ul>
