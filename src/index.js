@@ -10,6 +10,7 @@ import { NotFound } from "./pages/NotFound";
 import { Search } from "./pages/Search";
 import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
+import { BookingConfirm } from "./components/BookingConfirm";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/accomslist/:accommodationId",
     element:<AccomsDetail />
+  },
+  {
+    path:"/booking/:accommodationId",
+    element:<BookingConfirm />
   },
   {
     path:"/search",

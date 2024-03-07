@@ -4,6 +4,12 @@ import useFetchAccommodations from './UseFecthAccommodations';
 import { Link, useNavigate } from "react-router-dom";
 export const DataList =()=>{
   const { accomList, loading, error } = useFetchAccommodations();
+  const navigate = useNavigate()
+
+  const handleOnDetail = (accommodation)=>{
+    console.log("navigate 작동")
+    navigate(`/accomslist/${accommodation.id}`, {state:{accommodation}})
+  }
 
 
   return (
@@ -25,19 +31,12 @@ export const DataList =()=>{
                 <p>{item.description}</p>
                 <p>{item.price} 원 / 박</p>
               </div>
-              <Link 
-                to={
-                  {pathname : `/accomslist/${item.id}`,
-                  state : {item}
-                  }
-                }
-              >
               <button 
                 className="data-list-button"
+                onClick={()=>handleOnDetail(item)}
               > 
                 상세보기
               </button>
-              </Link>
             </li>
             )
           )}

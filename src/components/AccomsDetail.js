@@ -1,16 +1,38 @@
-import { useParams } from "react-router-dom"
-import useFetchAccommodations from "./UseFecthAccommodations";
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 
 export const AccomsDetail = () =>{
   const params = useParams();
-  const { accomList } = useFetchAccommodations();
+  const location = useLocation();
+  const selected = location.state.accommodation;
+
+  // const userData = useSelector 나중에 유저 데이터 가져와서 BookingConfirm 에 넘기기
+  
+const [ selectedAccommodation, setSelectedAccommodation ] = useState(null);
+const navigate = useNavigate();
+console.log("Detail navigate", navigate);
 
 
-const selected = accomList.find(
-    accommodation => accommodation.id === parseInt(params.accommodationId));
+  // const fetchAccommodationDetails = async () => {
+  //   try {
+  //     const response = await fetch(`/accommodation/${params.accommodationId}`);
+  //     const data = await response.json();
+  //     setSelectedAccommodation(data);
+  //   } catch (error) {
+  //     console.error("Error fetching accommodation details:", error);
+  //     // Handle error, e.g., display error message
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchAccommodationDetails();
+  // }, [params.accommodationId]);
 
 
+const handleOnConfirm =()=>{
+  console.log("작동")
+  navigate(`/booking/${params.accommodationId}`, {state:{  }})
+}
 
   
   return(
@@ -35,7 +57,13 @@ const selected = accomList.find(
         </div>
         <div className="detail-button-area">
           <p>{selected?.price}</p>
-          <button className="detail-button" type="button">예약하기</button>
+          <button 
+            className="detail-button" 
+            type="button"
+            onClick={()=>handleOnConfirm()}
+            >
+            예약하기
+          </button>
         </div>
       </div>
     </div>

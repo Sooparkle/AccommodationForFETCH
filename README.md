@@ -1,6 +1,9 @@
 Set Libraries
-1. npm install create-react-app
-2. npm install react-router-dom
+ - create-react-app
+ - react-router-dom
+ - redux
+ - react reduxjs/toolkit
+ - react-calendar
 
 
 
