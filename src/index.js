@@ -9,6 +9,7 @@ import store from "./store/store"
 import { Search } from "./pages/Search";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { Mypage } from "./pages/Mypage";
+import { BookingConfirm } from "./components/BookingConfirm";
 
 
 const  router = createBrowserRouter([
@@ -27,6 +28,10 @@ const  router = createBrowserRouter([
   {
     path:"/accomslist/:accommodationId",
     element : <AccomsDetail />
+  },
+  {
+    path:'/booking/:accomdationId',
+    element:<BookingConfirm />
   }
 
 ])

@@ -108,7 +108,7 @@ abbr[title] {
   color: white;
 }
 
-.test .react-calendar__month-view__weekdays{
+.calendar-custom .react-calendar__month-view__weekdays{
   display: grid;
   text-align: center;
   padding:0.7rem 0

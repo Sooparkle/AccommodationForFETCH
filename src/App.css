@@ -14,8 +14,9 @@ h2{
 button{
   padding: 0.2rem 0.5rem;
   cursor: pointer;
-  background: #ffffff00;
 }
+
+
 
 button:hover{
   background: #999;
@@ -213,8 +214,37 @@ button:hover{
   z-index: 100;
 }
 
-.detail-button{
+.detail-info-wrap{
+  text-align: center;
+}
+
+.detail-button-area .detail-price{
+  margin-top: 10px;
+
+}
+
+.detail-price-won{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.detail-submit-button {
   width: 200px;
   height:48px;
   border-radius: 8px;
+  border:1px solid 
+}
+
+
+.detail-calendar-Sday{
+  color : red;
+  font-weight:800;
+}
+
+
+.detail-calendar-Eday{
+  color : blueviolet;
+  font-weight:800;
+
 }
