@@ -1,13 +1,13 @@
 
 import React from 'react';
 import useFetchAccommodations from './UseFecthAccommodations';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 export const DataList =()=>{
   const { accomList, loading, error } = useFetchAccommodations();
   const navigate = useNavigate()
 
   const handleOnDetail = (accommodation)=>{
-    console.log("navigate 작동")
     navigate(`/accomslist/${accommodation.id}`, {state:{accommodation}})
   }
 

@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import React from 'react';
-import { ReactComponent as Logo } from "../assets/Logo.svg"
-import { ReactComponent as Search } from "../assets/Search.svg"
-import { ReactComponent as Mypage } from "../assets/Profile.svg"
+import { ReactComponent as Logo } from "../assets/logo.svg"
+import { ReactComponent as Search } from "../assets/search.svg"
+import { ReactComponent as Mypage } from "../assets/profile.svg"
 
 export const Header = () =>{
 

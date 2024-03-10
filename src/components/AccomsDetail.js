@@ -1,42 +1,58 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom"
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+// import FavoriteSVG  from "../assets/favorite.svg";
+// import Back  from "../assets/backBtn.svg";
+import BookingCalendar  from "./BookingCalendar";
 
 export const AccomsDetail = () =>{
   const params = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
+
   const selected = location.state.accommodation;
-
-  // const userData = useSelector 나중에 유저 데이터 가져와서 BookingConfirm 에 넘기기
   
-const [ selectedAccommodation, setSelectedAccommodation ] = useState(null);
-const navigate = useNavigate();
-console.log("Detail navigate", navigate);
+  const [ startDate, setStartDate ] = useState(null);
+  const [ endDate, setEndtDate ] = useState(null);
+  const [ isClicked, setIsClicked ] = useState();
 
+  const monthStringToIndex = (monthString) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months.indexOf(monthString)+1;
+  }
 
-  // const fetchAccommodationDetails = async () => {
-  //   try {
-  //     const response = await fetch(`/accommodation/${params.accommodationId}`);
-  //     const data = await response.json();
-  //     setSelectedAccommodation(data);
-  //   } catch (error) {
-  //     console.error("Error fetching accommodation details:", error);
-  //     // Handle error, e.g., display error message
-  //   }
-  // };
+  const handleConfirmBooking = () => {
+    // Optional: combine dates for booking logic
+    if (!startDate || !endDate) {
+      window.alert("시작 날짜와 종료 날짜를 기입해주세요.");      
+      return;
+    }
+    else {
+      navigate(`/booking/${params.accommodationId}`,{
+      state:{
+        selected,
+        dates:{
+          startDate,
+          endDate
+        }      }
+      })
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchAccommodationDetails();
-  // }, [params.accommodationId]);
-
-
-const handleOnConfirm =()=>{
-  console.log("작동")
-  navigate(`/booking/${params.accommodationId}`, {state:{  }})
-}
 
   
   return(
     <div className="detail-main">
+      <div className="detail-header">
+        {/* <Back className="detail-back-btn" onClick={() => navigate("/")} /> */}
+        <div>{selected?.accom_name}</div>
+        {/* <div>
+          <FavoriteSVG
+            fill={isClicked ? "red" : "#fff"}
+            onClick={() => setIsClicked(!isClicked)}
+          />
+        </div> */}
+      </div>
+
       <div className="detail-area">
         <div>
           <p>{selected?.accom_name} {selected?.accom_type}</p>
@@ -44,6 +60,11 @@ const handleOnConfirm =()=>{
           <p>{selected?.city} {selected?.cityGu}</p>
           <p>{selected?.max_occupancy} ~ {selected?.max_occupancy}</p>
         </div>
+
+        <div>
+          <BookingCalendar setStartDate={setStartDate} setEndtDate={setEndtDate} />
+        </div>
+
         <div>
           <dl>
             <dt>기본정보</dt>
@@ -55,17 +76,36 @@ const handleOnConfirm =()=>{
             <dd>주차 가능(객실당 1대 무료)</dd>
           </dl>
         </div>
+
         <div className="detail-button-area">
-          <p>{selected?.price}</p>
-          <button 
-            className="detail-button" 
+        <div className="detail-info-wrap">
+            <div>
+              <span>{startDate && startDate[3]} </span>
+              <span className="detail-calendar-Sday">
+                {startDate && monthStringToIndex(startDate[1])}월{" "}
+              </span>
+              <span>{startDate && startDate[2]} </span>~
+              <span> {endDate && endDate[3]} </span>
+              <span className="detail-calendar-Eday">
+                {endDate && monthStringToIndex(endDate[1]) }월{" "}
+              </span>
+              <span>{endDate && endDate[2] } </span>
+            </div>
+            <p className="detail-price">
+              <span className="detail-price-won">{selected?.price}</span> 원 /
+              박
+            </p>
+          </div>
+
+          <button
+            className="detail-submit-button"
             type="button"
-            onClick={()=>handleOnConfirm()}
-            >
+            onClick={() => handleConfirmBooking()}
+          >
             예약하기
           </button>
         </div>
+        </div>
       </div>
-    </div>
   )
 }

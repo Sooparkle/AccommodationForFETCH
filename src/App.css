@@ -3,16 +3,25 @@
   --main-color: 
 }
 
+h1{
+  font-size: 32px;
+}
+h2{
+  font-size: 26px;
+  margin-bottom: 10px;
+}
 
 button{
   padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
 
+
+
 button:hover{
   background: #999;
-
 }
+
 
 .main{
   width: 700px;
@@ -42,10 +51,6 @@ button:hover{
   z-index: 3;
 }
 
-.header-wrap a{
-  display: block;
-  width :38px
-}
 
 .App-logo {
   height: 40vmin;
@@ -65,19 +70,27 @@ button:hover{
   color: white;
 }
 
+.header-wrap a{
+  display: block;
+  width: 38px;
+}
 
+.header-search{
+  width:36px;
+}
 
-.header-wrap logo{
-  position: fixed;
-  bottom: 20px;
-  border-radius: 50%;
-  background: teal ;
+.header-myprofile{
+  width: 34px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.header-wrap .active{
+  display: block;
+  color : red
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -109,7 +122,7 @@ button:hover{
 
 .data-list-img{
   width:fit-content;
-  height: 38vmin;
+  object-fit: cover;
   grid-row: 1;
   grid-column: 1;
 
@@ -156,6 +169,26 @@ button:hover{
   background: #dfdfdf;
 }
 
+.detail-header{
+  position:relative;
+  top:0;
+  left:0;
+  right:0;
+  max-width :700px;
+  height:64px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  padding:0  1.2rem;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  z-index: 1;
+}
+
+.detail-back-btn{
+  cursor: pointer;
+}
+
 .detail-area{
   display: grid;
   /* place-content: center; */
@@ -164,17 +197,90 @@ button:hover{
   grid-row-gap:54px;
 }
 
-.detail-butto-area{
+.detail-button-area{
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 700px;
+  height: 68px;
+  margin-inline: auto;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 2fr 1fr;
+  place-items: center;
+
+  background: #fff;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);;
+  z-index: 100;
 }
 
-.detail-button{
+.detail-info-wrap{
+  text-align: center;
+}
+
+.detail-button-area .detail-price{
+  margin-top: 10px;
+
+}
+
+.detail-price-won{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.detail-submit-button {
   width: 200px;
   height:48px;
   border-radius: 8px;
+  border:1px solid 
+}
+
+
+.detail-calendar-Sday{
+  color : red;
+  font-weight:800;
+}
+
+
+.detail-calendar-Eday{
+  color : blueviolet;
+  font-weight:800;
+
+}
+
+
+
+
+
+/* 로그인 페이지 */
+.mypage-wrap{
+  display: grid;
+  /* grid-template-columns: min-content; */
+  min-height: 100dvh;
+  width: 100%;
+}
+
+label{
+  display: block;
+}
+
+.login-wrap form{
+  display: grid;
+  gap: 1rem;
+}
+
+.naver-login{
+  display: block;
+  width:100%;
+  height:50px;
+  padding:17px 0;
+  border-radius: 4px;
+  background: #17b75e;
+  color : #fff;
+  margin-top:50px;
+}
+
+.naver-login:hover{
+  box-shadow: 0 2px 4px 0 rgba(3,199,90,.24);
 }

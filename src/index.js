@@ -11,20 +11,25 @@ import { Search } from "./pages/Search";
 import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
+import { BookingFinished } from "./components/BookingFinished";
 
 const router = createBrowserRouter([
   {
     path:"/",
     element : <App />,
-    errorElement : <NotFound />
+    errorElement : <NotFound />,
   },
   {
     path: "/accomslist/:accommodationId",
-    element:<AccomsDetail />
+    element:<AccomsDetail />,
   },
   {
     path:"/booking/:accommodationId",
-    element:<BookingConfirm />
+    element:<BookingConfirm />,
+  },
+  {
+    path:"/booking/result/",
+    element:<BookingFinished />
   },
   {
     path:"/search",
