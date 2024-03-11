@@ -2,6 +2,7 @@ import { SearchForm } from "../components/searchForm";
 import { DataList } from "../components/DataList";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Header } from "../components/Header";
 
 export const Main = () =>{
   const auth = useSelector((state)=>state.auth);
@@ -11,15 +12,14 @@ export const Main = () =>{
 
 
   return (
-    <>
-      <h1>Main : index page</h1>
+    <div className="main">
       <SearchForm onClick={()=>{navigate("/")}}/>
       
       {/* test 용 */}
-      <button type="button" onClick={()=>{navigate("/search")}}>상세</button>
-      
+      {/* <button type="button" onClick={()=>{navigate("/search")}}>상세</button> */}
       <DataList />
+      <Header />
 
-    </>
+    </div>
   )
 }

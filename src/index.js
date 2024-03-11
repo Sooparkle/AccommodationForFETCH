@@ -10,12 +10,13 @@ import { Search } from "./pages/Search";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { Mypage } from "./pages/Mypage";
 import { BookingConfirm } from "./components/BookingConfirm";
+import { Main } from "./pages/Main";
 
 
 const  router = createBrowserRouter([
   { 
     path:"/",
-    element : <App />
+    element : <Main />
   },
   {
     path:"/search",

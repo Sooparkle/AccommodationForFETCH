@@ -1,37 +1,53 @@
 @import 'reset.css';
 :root{
-  --main-color: 
+  --color-main: #82bd69;
+  --color-strong: #3d692c;
+  --color-light : #d3eac8;
+
+  --front-basic:16px;
+  --font-strong : 18px;
+  --font-extra-strong :22px;
+
 }
 
 h1{
-  font-size: 32px;
+  font-size: 32px; 
+
 }
 h2{
   font-size: 26px;
   margin-bottom: 10px;
 }
 
+p{
+  margin: 4px 0;
+}
+
 button{
   padding: 0.2rem 0.5rem;
   cursor: pointer;
+
 }
 
 
-
 button:hover{
-  background: #999;
+  background: var(--color-strong);
+  color : #fff;
+
 }
 
 
 .main{
-  width: 700px;
+  width: 680px;
   display: grid;
-  place-content: center;
-  /* place-items: center; */
+  /* place-content: center; */
+  place-items: center;
   margin-inline: auto;
   padding-bottom: 80px;
 
-  background: #dfdfdf;
+  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
+  /* border-left: 1px solid var(--color-light);
+border-right: 1px solid var(--color-light); */
 }
 
 
@@ -41,7 +57,7 @@ button:hover{
   position: fixed;
   bottom: 0;
   width:100%;
-  height: 80px;
+  height: 68px;
   display: grid;
   align-items: center;
 
@@ -106,32 +122,54 @@ button:hover{
   /* place-content: center; */
   position: relative;
   padding : 2rem 0 ;
-  grid-row-gap:54px;
+  grid-row-gap:70px;
 }
 
 .data-list-each{
-  /* grid-row: 1; */
-  /* grid-column: 1; */
+  display: grid;
+  justify-content: center;
+
 }
 
 .data-img-wrap{
-  width: 480px;
+  /* width: 480px; */
   overflow: hidden;
   border-radius: 12px;
+  margin-bottom: 20px;
 }
 
-.data-list-img{
+/* .data-list-img{
   width:fit-content;
   object-fit: cover;
   grid-row: 1;
   grid-column: 1;
 
+} */
+
+.data-list-location{
+  color :#000;
+  font-weight: 600;
+}
+
+.data-list-price{
+  color : #000;
+  font-size: var(--font-strong);
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 .data-list-detail{
-  color : #999;
+  color : #656565;
+  position: relative;
   /* grid-row:1; */
   /* grid-column: 1; */
+}
+
+.data-list-score{
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color : #000;
 }
 
 .data-list-button{
@@ -139,8 +177,9 @@ button:hover{
   width: 100%;
   height:48px;
   border-radius: 8px;
-  margin-top : 20px;
-  cursor: pointer;
+  margin-top : 30px;
+  cursor: pointer; 
+  border: 1px solid var(--color-light);
 }
 
 .data-list-event{
@@ -157,16 +196,77 @@ button:hover{
 
 
 
+
+
+
+/* search area */
+.search-wrap{
+  height: 54px;
+  border: 1px solid var(--color-main);
+  border-radius: 30px ;
+  overflow: hidden;
+  display: flex;
+  margin:30px 10px 0;
+  width: fit-content;
+  margin-inline: auto;
+
+}
+
+.search-wrap form{
+  display:inline-grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  border:1px solid var(--color-light);
+}
+
+.search-wrap input{
+  border: 0;
+  outline: transparent;
+  background: transparent;
+  padding-left: 20px;
+  
+}
+
+.search-btn{
+  border: 0;
+  height: 100%;
+  width: 100%;
+  padding:0 30px;
+  color :var(--color-main);
+}
+
+.search-svg{
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Data detail area */
 .detail-main{
-  width: 700px;
+  width: 680px;
   display: grid;
   place-content: center;
   /* place-items: center; */
   margin-inline: auto;
   padding-bottom: 80px;
-
-  background: #dfdfdf;
+  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
 }
 
 .detail-header{
@@ -202,7 +302,7 @@ button:hover{
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 700px;
+  max-width: 680px;
   height: 68px;
   margin-inline: auto;
   display: grid;
@@ -233,7 +333,7 @@ button:hover{
   width: 200px;
   height:48px;
   border-radius: 8px;
-  border:1px solid 
+  border:1px solid var(--color-light)
 }
 
 

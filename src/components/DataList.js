@@ -1,5 +1,6 @@
 import useFetchAccommodations from "./UseFetchingAccommodations";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ReactComponent as Score } from "../assets/score.svg"
 
 export const DataList = () => {
   const { accomList, loading, error } = useFetchAccommodations();
@@ -22,9 +23,10 @@ export const DataList = () => {
                 <img className="data-list-img" src={item.img_url} alt={item.accom_name} />
               </div>
               <div className="data-list-detail">
-                <p><span>{item.province}</span><span>{item.cityGu}</span></p>
+                <p className="data-list-location"><span>{item.province}</span><span>{item.cityGu}</span></p>
                 <p>{item.description}</p>
-                <p>{item.price} 원 / 박</p>
+                <p className="data-list-price">{item.price} 원 / 박</p>
+                <div className="data-list-score"><Score className="data-score-svg" /> 5</div>
               </div>
 
               <button 

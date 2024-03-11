@@ -16,7 +16,6 @@ function App() {
         <Route path="/mypage" element={<Mypage />} />
       </Routes>
       </div>
-    
     </>
   );
 }
