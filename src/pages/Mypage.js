@@ -8,22 +8,26 @@ export const Mypage = () =>{
 
   const searchParams = new URLSearchParams(window.location.search);
   const loggedIn = searchParams.get("loggedIn") === "true";
+  const existingUser = searchParams.get("existingUser") === "true";
 
   console.log("Naver social Login",loggedIn);
 
 
 
-  return(
+  return (
     <div className='main'>
       <div className='mypage-wrap'>
-      <h1>로그인 페이지</h1>
-      { loggedIn ? (
-        <MyprofileList /> 
-        ) : (
-          <LoginForm /> 
+        <h1>로그인 페이지</h1>
+        {loggedIn ? (
+          existingUser ? (
+            <MyprofileList /> // Existing user profile
+          ) : (
+            <div>회원가입이 완료되었습니다!</div> // New user message
           )
-        }
-        </div>
+        ) : (
+          <LoginForm /> // Login form
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
