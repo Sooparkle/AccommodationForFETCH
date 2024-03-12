@@ -1,5 +1,15 @@
+:root{
+  --color-main: #82bd69;
+  --color-strong: #3d692c;
+  --color-light : #d3eac8;
+
+  --front-basic:16px;
+  --font-strong : 18px;
+  --font-extra-strong :22px;
+}
+
 .react-calendar {
-  width: 100%;
+  width: 80dvw;
   max-width: 100%;
   background-color: #fff;
   color: #222;
@@ -7,6 +17,7 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
+  margin-inline: auto;
 }
 
 .react-calendar__navigation{
@@ -19,7 +30,7 @@
 
 
 .react-calendar__navigation button {
-  color: #6f48eb;
+  color: var(--color-main);
   min-width: 44px;
   background: none;
   font-size: 16px;
@@ -43,23 +54,23 @@ abbr[title] {
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
   background: #f8f8fa;
-  color: #6f48eb;
+  color: var(--color-main);
   border-radius: 6px;
 }
 
 .react-calendar__tile--now {
-  background: #6f48eb33;
+  background: var(--color-light);
   border-radius: 6px;
   font-weight: bold;
-  color: #6f48eb;
+  color:var(--color-main);
 }
 
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
-  background: #6f48eb33;
+  background: var(--color-light);
   border-radius: 6px;
   font-weight: bold;
-  color: #6f48eb;
+  color: var(--color-main);
 }
 
 .react-calendar__tile--hasActive:enabled:hover,
@@ -68,7 +79,7 @@ abbr[title] {
 }
 
 .react-calendar__tile--active {
-  background: #6f48eb;
+  background: var(--color-main);
   border-radius: 6px;
   font-weight: bold;
   color: white;
@@ -76,7 +87,7 @@ abbr[title] {
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #6f48eb;
+  background: var(--color-main);
   color: white;
 }
 
@@ -86,7 +97,7 @@ abbr[title] {
 
 .react-calendar__tile--range {
   background: #f8f8fa;
-  color: #6f48eb;
+  color: var(--color-main);
   border-radius: 0;
 }
 
@@ -95,7 +106,7 @@ abbr[title] {
   border-bottom-right-radius: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
-  background: #6f48eb;
+  background: var(--color-main);
   color: white;
 }
 
@@ -104,7 +115,7 @@ abbr[title] {
   border-bottom-left-radius: 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  background: #6f48eb;
+  background: var(--color-main);
   color: white;
 }
 

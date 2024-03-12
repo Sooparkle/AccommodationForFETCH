@@ -23,8 +23,9 @@ export const SearchForm = () =>{
           <button
             className="search-btn"
             type="button"
-            ><SearchBar />
-            </button>
+            >
+            <SearchBar />
+          </button>
       </form>
     </div>
 

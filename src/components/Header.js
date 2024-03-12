@@ -3,6 +3,7 @@ import { ReactComponent as  Logo }  from "../assets/Logo.svg";
 import { ReactComponent as Search }  from "../assets/search.svg";
 import  { ReactComponent as MyProfile }  from "../assets/profile.svg";
 import React, { useState } from "react";
+import { SearchButton } from "./SearchButton";
 
 export const Header = () => {
   const [activeLink, setActiveLink] = useState(""); // Track the active link
@@ -18,14 +19,15 @@ export const Header = () => {
       <div className="header-wrap">
         <ul>
 
-          <li className={activeLink === "/search" ? "active" : ""}>
-            <NavLink to="/search" onClick={(e) => { handleLinkClick("/search"); e.preventDefault();} }>
-              <Search
+          <li >
+            <SearchButton />
+            {/* <NavLink to="/search" onClick={(e) => { handleLinkClick("/search"); e.preventDefault();} }> */}
+              {/* <Search
                 fill={activeLink === "/search" ? "#007bff" : "#fff"} // Change color for active link
                 stroke="#999"
                 className="header-search"
-              />
-            </NavLink>
+              /> */}
+            {/* </NavLink> */}
           </li>
 
           <li className={activeLink === "/" ? "active" : ""}>

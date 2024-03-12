@@ -215,7 +215,7 @@ border-right: 1px solid var(--color-light); */
 .search-wrap form{
   display:inline-grid;
   grid-template-columns: 240px minmax(0, 1fr);
-  border:1px solid var(--color-light);
+
 }
 
 .search-wrap input{
@@ -324,7 +324,7 @@ border-right: 1px solid var(--color-light); */
 }
 
 .detail-price-won{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -338,13 +338,80 @@ border-right: 1px solid var(--color-light); */
 
 
 .detail-calendar-Sday{
-  color : red;
+  color : var(--color-main);
   font-weight:800;
 }
 
 
 .detail-calendar-Eday{
-  color : blueviolet;
+  color : var(--color-strong);
   font-weight:800;
+}
+
+.detail-calendar-day-check{
+  color : #999;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Search Button CSS */
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Optional rounded corners */
+  transform: translateY(100%); /* Start hidden off-screen */
+  transition: transform 0.3s ease-in-out; /* Animation settings */
+  z-index: 100; /* Set a high z-index to ensure it's on top */
+  height :80dvh;
+  overflow: auto;
+}
+
+.popup.open {
+  transform: translateY(0); /* Slide up to visible position */
 
 }
+
+body.overflow-hidden {
+  /* Prevent body scrolling on popup open */
+  overflow: true;
+}
+
+.search-detail-act-btn{
+  position: absolute;
+  top:50px;
+  right :12%;
+
+}
+
+.search-detail-form-wrap {
+  display: grid;
+  justify-items: center;
+  row-gap: 20px;
+}
+
+.search-detail-btn{
+  position: absolute;
+  right:10%;
+}
+

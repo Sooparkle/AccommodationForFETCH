@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { ReactComponent as Back } from "../assets/backBtn.svg";
 import { ReactComponent as FavoriteSVG } from "../assets/favorite.svg";
 import BookingCalendar from "./BookingCalender";
 
 export const AccomsDetail = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [ isClicked, setIsClicked] = useState(false);
+  const [ countDays, setCountDays ] = useState(null);
   const params = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,6 +16,32 @@ export const AccomsDetail = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const monthStringToIndex = (data) =>{
+    const indexMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return indexMonths.indexOf(data) +1 
+  }
+
+useEffect(()=>{
+  if(endDate){
+
+    const countStartDate = new Date(startDate[3], monthStringToIndex(startDate[1]), startDate[2]);
+    const countEndDate = new Date(endDate[3], monthStringToIndex(endDate[1]), endDate[2]);
+    
+    // // 기간 동안 숙박료
+    const timeDifference = countEndDate.getTime() - countStartDate.getTime();
+    const stayingNights = Math.ceil(timeDifference / (1000 * 60 * 60 * 24)) ;
+    
+    const stayingNightsPrice =parseInt(selected.price.replace(',', "")) * stayingNights
+
+    setCountDays(stayingNightsPrice)
+
+}
+
+},[endDate])
+
+
+  
+  
   const handleConfirmBooking = () => {
     // Optional: combine dates for booking logic
     if (!startDate || !endDate) {
@@ -88,21 +115,32 @@ export const AccomsDetail = () => {
         {/* 버튼 영역 */}
         <div className="detail-button-area">
           <div className="detail-info-wrap">
+
+            {
+              endDate ? (
             <div>
               <span>{startDate && startDate[3]} </span>
-              <span className="detail-calendar-Sday">
-                {startDate && startDate[2]}{" "}
+              <span >
+                {startDate && monthStringToIndex(startDate[1])}월{" "}
               </span>
-              <span>{startDate && startDate[1]} </span>~
+              <span className="detail-calendar-Sday">{startDate && startDate[2]} </span>~
               <span> {endDate && endDate[3]} </span>
-              <span className="detail-calendar-Eday">
-                {endDate && endDate[2]}{" "}
+              <span >
+                {endDate && monthStringToIndex(endDate[1]) }월{" "}
               </span>
-              <span>{endDate && endDate[1]} </span>
+              <span className="detail-calendar-Eday">{endDate && endDate[2]} </span>
             </div>
+              ) : (
+                <p className="detail-calendar-day-check">날짜를 입력해 주세요.</p>
+              )
+            }
             <p className="detail-price">
-              <span className="detail-price-won">{selected?.price}</span> 원 /
-              박
+              <span className="detail-price-won">
+              {
+              countDays ? ` (예상가) ${countDays} 원 ` :
+              '-'
+              }
+              </span>
             </p>
           </div>
 
