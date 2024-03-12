@@ -274,7 +274,7 @@ border-right: 1px solid var(--color-light); */
   top:0;
   left:0;
   right:0;
-  max-width :700px;
+  max-width :680px;
   height:64px;
   background: #fff;
   display: flex;
@@ -283,6 +283,7 @@ border-right: 1px solid var(--color-light); */
   padding:0  1.2rem;
   border-bottom: 1px solid rgb(221, 221, 221);
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .detail-back-btn{
@@ -290,6 +291,7 @@ border-right: 1px solid var(--color-light); */
 }
 
 .detail-area{
+  width: auto;
   display: grid;
   /* place-content: center; */
   position: relative;
