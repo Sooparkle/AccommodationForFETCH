@@ -13,8 +13,7 @@ export const DataList =()=>{
 
 
   return (
-  <>
-    <h2>숙박 목록</h2>
+
     <div>
       {loading && <p>Loading accomodations..</p>}
       {error && <p>Error :{error}</p>}
@@ -43,8 +42,7 @@ export const DataList =()=>{
         </ul>
         )
       }
-      { !loading && !accomList && <p>No accommodations found...</p> }
+      { !loading && !accomList && <p>데이터가 로딩 중입니다.</p> }
     </div>
-  </>
   )
 }
