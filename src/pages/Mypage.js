@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { LoginForm } from"../components/LoginForm";
 import { MyprofileList } from "../components/MyprofileList"
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const Mypage = () =>{
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -28,6 +29,7 @@ export const Mypage = () =>{
           <LoginForm /> // Login form
         )}
         <Header />
+        <Footer />
       </div>
     </div>
   );

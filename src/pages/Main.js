@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Header } from "../components/Header";
 import { SearchButton } from "../components/SearchButton";
+import { Footer } from "../components/Footer";
 
 export const Main = () =>{
   const auth = useSelector((state)=>state.auth);
@@ -25,6 +26,7 @@ export const Main = () =>{
       <DataList />
 
       <Header />
+      <Footer />
 
     </div>
   )

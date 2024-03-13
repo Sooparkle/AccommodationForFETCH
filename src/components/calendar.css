@@ -9,7 +9,7 @@
 }
 
 .react-calendar {
-  width: 80dvw;
+  width: 600px;
   max-width: 100%;
   background-color: #fff;
   color: #222;
@@ -37,6 +37,10 @@
   margin-top: 8px;
 }
 
+
+.react-calendar__navigation__label__labelText {
+  font-weight: bold;
+}
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
   background-color: #f8f8fa;

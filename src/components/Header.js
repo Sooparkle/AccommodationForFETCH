@@ -19,7 +19,7 @@ export const Header = () => {
       <div className="header-wrap">
         <ul>
 
-          <li >
+          <li className={activeLink === "/search" ? "active" : ""}>
             <SearchButton />
             {/* <NavLink to="/search" onClick={(e) => { handleLinkClick("/search"); e.preventDefault();} }> */}
               {/* <Search
