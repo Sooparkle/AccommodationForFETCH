@@ -200,8 +200,20 @@ footer{
 
 
 
+/* bookingConfirm */
 
 
+
+
+
+
+
+
+.confirm-brief-booking,
+.confirm-booking-info,
+.confirm-accommodation-info{
+
+}
 
 
 
@@ -266,7 +278,9 @@ footer{
 
 
 /* Data detail area */
-.detail-main{
+.detail-main,
+.confirm-main
+{
   width: 680px;
   display: grid;
   place-content: center;
@@ -276,7 +290,8 @@ footer{
   box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
 }
 
-.detail-header{
+.detail-header,
+.confirm-header{
   position:relative;
   top:0;
   left:0;
@@ -297,7 +312,8 @@ footer{
   cursor: pointer;
 }
 
-.detail-area{
+.detail-area,
+.confirm-area{
   width: auto;
   display: grid;
   /* place-content: center; */
@@ -309,12 +325,13 @@ footer{
 
 .detail-describe{
   width: 580px;
+  height: 100%;
   position: relative;
 }
 
 .detail-score-wrap{
   position: absolute;
-  top: 405px;
+  bottom : 60px;
   right:0;
 }
 

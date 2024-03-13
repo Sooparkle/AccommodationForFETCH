@@ -26,7 +26,7 @@ export const DataList = () => {
                 <p className="data-list-location"><span>{item.province}</span><span>{item.cityGu}</span></p>
                 <p>{item.description}</p>
                 <p className="data-list-price">{item.price} 원 / 박</p>
-                <div className="data-list-score"><Score className="data-score-svg" /> 5</div>
+                <div className="data-list-score"><Score className="data-score-svg" /> {item.score}</div>
               </div>
 
               <button 

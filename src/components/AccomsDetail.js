@@ -72,10 +72,12 @@ export const AccomsDetail = () => {
     // Optional: combine dates for booking logic
     if (!startDate || !endDate) {
       console.error("Please select a date range to book.");
-      window.alert("시작 날짜와 종료 날짜를 기입해주세요.");
+      window.alert(`시작 날짜와 종료 날짜를 기입해주세요. \n인원 추가가 없을시 최소 인원으로 신청됩니다.\n 성인 : ${adultNumbers}\n 어린이 : ${childNumbers}`);
       return;
     } else {
-      navigate(`/booking/:${params.accommodationId}`, {
+      window.alert(`인원 추가가 없을시 '최소 인원 : ${selected?.min_occupancy}'으로 신청됩니다.\n 성인 : ${adultNumbers}\n 어린이 : ${childNumbers}`);
+
+      navigate(`/booking/${params.accommodationId}`, {
         state: {
           selected,
           dates: {
