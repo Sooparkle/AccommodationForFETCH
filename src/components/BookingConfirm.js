@@ -98,6 +98,7 @@ const stringPrice = (price)=> {
   };
 
   const handleOnClick = async (e) => {
+    e.preventdefault();
     console.log("Date", e);
     try {
       const options = {

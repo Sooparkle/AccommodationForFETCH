@@ -18,7 +18,7 @@ export const Mypage = () =>{
   return (
     <div className='main'>
       <div className='mypage-wrap'>
-        <h1>로그인 페이지</h1>
+        <h2>로그인 페이지</h2>
         {loggedIn ? (
           existingUser ? (
             <MyprofileList /> // Existing user profile

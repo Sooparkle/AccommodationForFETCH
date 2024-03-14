@@ -321,7 +321,8 @@ footer{
   box-sizing: border-box;
 }
 
-.detail-back-btn{
+.detail-back-btn,
+.confirm-back-btn{
   cursor: pointer;
 }
 
@@ -559,6 +560,7 @@ footer{
   padding: 1.2rem 3rem;
   background:  var(--color-main);
   border-radius: 12px;
+  font-weight: bold;
 }
 
 
@@ -615,3 +617,32 @@ body.overflow-hidden {
   right:10%;
 }
 
+
+
+
+
+
+
+
+
+
+/* My page CSS Area */
+.mypage-wrap{
+  display: grid;
+  justify-items: center;
+}
+
+.mypage-wrap h2{
+  padding : 1rem 0;
+}
+
+
+.login-wrap{
+  height: 100dvh;
+
+}
+
+.login-wrap form{
+  /* display: grid;
+  justify-items: center; */
+}
