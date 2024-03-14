@@ -21,10 +21,6 @@ export const AccomsDetail = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-  const [ adultNumbers, setAdultNumbers ] = useState(0);
-  const [ childNumbers, setChildNumbers ] = useState(0);
-
-
 
   const monthStringToIndex = (data) => {
     const indexMonths = [
@@ -72,11 +68,10 @@ export const AccomsDetail = () => {
     // Optional: combine dates for booking logic
     if (!startDate || !endDate) {
       console.error("Please select a date range to book.");
-      window.alert(`시작 날짜와 종료 날짜를 기입해주세요. \n인원 추가가 없을시 최소 인원으로 신청됩니다.\n 성인 : ${adultNumbers}\n 어린이 : ${childNumbers}`);
+      window.alert(`시작 날짜와 종료 날짜를 기입해주세요. \n인원 추가가 없을시 최소 인원으로 신청됩니다.`);
       return;
     } else {
-      window.alert(`인원 추가가 없을시 '최소 인원 : ${selected?.min_occupancy}'으로 신청됩니다.\n 성인 : ${adultNumbers}\n 어린이 : ${childNumbers}`);
-
+      window.alert(`숙박 선택 일자 \n${startDate[3]}.${monthStringToIndex(startDate[1])}.${startDate[2]} ~ ${endDate[3]}.${monthStringToIndex(endDate[1])}.${endDate[2]} \n으로 신청됩니다.`);
       navigate(`/booking/${params.accommodationId}`, {
         state: {
           selected,
@@ -84,8 +79,7 @@ export const AccomsDetail = () => {
             startDate,
             endDate,
           },
-          adultNumbers,
-          childNumbers
+          countDays,
         },
       });
     }
@@ -130,29 +124,7 @@ export const AccomsDetail = () => {
             setEndDate={setEndDate}
           />
         </div>
-        <div className="detail-number-add">
-          <div>
-            <p>성인 인원
-              <span className="detail-number-add-describe">(13세 이상)</span> : 
-              <span >
-                <button onClick={()=>setAdultNumbers(adultNumbers + 1)}>+</button></span> {adultNumbers} <span >
-                <button 
-                  onClick={()=>setAdultNumbers(adultNumbers -1 )}
-                  className="decrease">-</button>
-              </span>
-            </p>
-          </div>
-          <div>
-            <p>어린 인원
-              <span className="detail-number-add-describe">(2~12세)</span> : 
-              <span >
-                <button onClick={()=>setChildNumbers(childNumbers + 1)} >+</button></span> {childNumbers} <span >
-                <button 
-                  onClick={()=>setChildNumbers(childNumbers -1 )}
-                  className="decrease">-</button></span>
-              </p>
-          </div>
-        </div>
+
 
         <div className="detail-basic-info">
           <p className="detail-basic-info-theme">숙박정보</p>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 @import 'reset.css';
 :root{
   --color-main: #82bd69;
@@ -10,6 +11,9 @@
 
 }
 
+#root{
+font-family: "Noto Serif KR", serif;
+}
 h1{
   font-size: 32px; 
 
@@ -278,8 +282,7 @@ footer{
 
 
 /* Data detail area */
-.detail-main,
-.confirm-main
+.detail-main
 {
   width: 680px;
   display: grid;
@@ -287,6 +290,16 @@ footer{
   /* place-items: center; */
   margin-inline: auto;
   padding-bottom: 68px;
+  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
+}
+
+.confirm-main
+{
+  width: 680px;
+  display: grid;
+  place-content: center;
+  /* place-items: center; */
+  margin-inline: auto;
   box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
 }
 
@@ -312,8 +325,7 @@ footer{
   cursor: pointer;
 }
 
-.detail-area,
-.confirm-area{
+.detail-area{
   width: auto;
   display: grid;
   /* place-content: center; */
@@ -346,17 +358,7 @@ footer{
 }
 
 
-.detail-number-add{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width:600px;
-  padding:1rem;
-  border: 3px solid var(--color-main);
-  border-radius: 12px;
-  box-sizing: border-box;
-}
-
-.detail-number-add button{
+.confirm-number-add button{
   padding: .5rem 1rem;
   border-radius: 8px;
 }
@@ -428,16 +430,7 @@ footer{
 }
 
 
-.detail-calendar-Sday{
-  color : var(--color-main);
-  font-weight:800;
-}
 
-
-.detail-calendar-Eday{
-  color : var(--color-strong);
-  font-weight:800;
-}
 
 .detail-calendar-day-check{
   color : #999;
@@ -451,6 +444,122 @@ footer{
 
 
 
+
+.confirm-extra-number-theme,
+.confirm-user-info-theme,
+.confirm-accommodation-info-theme,
+.confirm-booking-info-theme
+{
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+  font-size: var(--font-strong);
+  margin-bottom: 20px;
+}
+
+.confirm-area{
+  width: auto;
+  display: grid;
+  /* place-content: center; */
+  position: relative;
+  grid-row-gap:54px;
+  /* justify-items: center; */
+}
+
+
+.confirm-user-info,
+.confirm-accommodation-info,
+.confirm-extra-numbers{
+  margin-inline : 2rem;
+}
+
+.confirm-user-info,
+.confirm-accommodation-info{
+  padding-bottom: 40px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+
+
+
+
+.confirm-extra-number-theme{
+  margin-bottom: 10px;
+}
+
+.confirm-extra-numbers > span{
+  width: 100%;
+  display: inline-block;
+  text-align: right;
+  margin-top: 4px;
+  font-size: 12px;
+  color:#999;
+}
+.confirm-number-add{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width:100%;
+  padding:1rem;
+  border: 2px solid var(--color-main);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.confirm-calendar-Sday{
+  color : var(--color-main);
+  font-weight:800;
+}
+
+
+.confirm-calendar-Eday{
+  color : var(--color-strong);
+  font-weight:800;
+}
+
+.confirm-booking-info{
+  border-top: 1px solid #c9c9c9;
+  padding-inline: 2rem;
+  padding-top:2rem;
+}
+
+.confirm-booking-info >h2 {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-top: 19px;
+  border-top: 1px solid #c9c9c9;
+}
+
+.confirm-booking-date{
+  display: inline-block;
+}
+
+.confirm-brief-booking p:nth-last-of-type(1){
+  text-align: right;
+  margin-top: 1rem;
+  /* font-size: var(--font-strong); */
+}
+
+.confirm-brief-booking > p >span{
+  font-weight: bold;
+}
+
+.confirm-brief-date-basic{
+  text-align: right;
+  padding: 1rem 0;
+  margin : 0.8rem 0;
+  /* border-top: 1px solid #c9c9c9; */
+  border-bottom: 1px solid #c9c9c9;
+  font-weight: bold;
+}
+
+.confirm-payment-button{
+  width:300px;
+  margin-inline:auto;
+  padding: 1.2rem 3rem;
+  background:  var(--color-main);
+  border-radius: 12px;
+}
 
 
 
