@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "create-react-app": "^1.2.1",
     "dotenv": "^16.4.5",
+    "gh-pages": "^6.1.1",
     "n": "^9.2.0",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
@@ -23,8 +24,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
+  "homepage": "http://sooparkle.github.io/project3/",
   "eslintConfig": {
     "extends": [
       "react-app",
