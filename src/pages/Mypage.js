@@ -1,33 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from "react-redux";
-import { LoginForm } from "../components/LoginForm";
+import { Login } from "../pages/Login";
 import { MyprofileList } from "../components/Myprofile";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 export const Mypage = () =>{
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const loggedIn = searchParams.get("loggedIn") === "true";
-  const existingUser = searchParams.get("existingUser") === "true";
-
-  console.log("Naver social Login",loggedIn);
-
-
+  useEffect(()=>{
+  }, [isLoggedIn])
 
   return (
     <div className='main'>
       <div className='mypage-wrap'>
-        <h1>로그인 페이지</h1>
-        {loggedIn ? (
-          existingUser ? (
+        {isLoggedIn ? (
             <MyprofileList /> // Existing user profile
           ) : (
-            <div>회원가입이 완료되었습니다!</div> // New user message
-          )
-        ) : (
-          <LoginForm /> // Login form
+          <Login /> 
         )}
       </div>
+        <Header />
+        <Footer />
     </div>
   );
 };

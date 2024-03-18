@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ReactComponent as Back } from "../assets/backBtn.svg";
 import { ReactComponent as FavoriteSVG } from "../assets/favorite.svg";
 import BookingCalendar  from "./BookingCalendar";
 import { Footer } from "./Footer";
 import { ReactComponent as Score } from "../assets/score.svg";
+import { useSelector } from "react-redux";
+
 
 export const AccomsDetail = () =>{
   const params = useParams();
@@ -17,17 +19,18 @@ export const AccomsDetail = () =>{
   const cancels = selected.cancel.split('/');
 
   const [ startDate, setStartDate ] = useState(null);
-  const [ endDate, setEndtDate ] = useState(null);
+  const [ endDate, setEndDate ] = useState(null);
   const [ isClicked, setIsClicked ] = useState(false);
   const [ countDays, setCountDays ] = useState(null)
-
+  const [ totalPrice, setTotalPrice ] = useState();
+  const daysRef = useRef(null);
+  const user = useSelector(state => state.auth);
 
 
   const monthStringToIndex = (monthString) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return months.indexOf(monthString)+1;
   }
-
 
 
   useEffect(()=>{
@@ -40,8 +43,18 @@ export const AccomsDetail = () =>{
 
       const stayNightPrice = parseInt(selected.price.replace(',',"")) * stayNight;
 
-      // const position  = stayNightPrice.length - 3;
-      // const result = stayNightPrice.slice(0, position) + ',' + stayNightPrice.slice(position);
+      let priceStr = stayNightPrice.toString();
+  
+      // Insert comma at third position from the end
+      if (priceStr.length > 3) {
+        priceStr = priceStr.slice(0, -3) + ',' + priceStr.slice(-3);
+      }
+    
+      // Insert comma at sixth position from the end if price length is more than 6
+      if (priceStr.length > 7) {
+        priceStr = priceStr.slice(0, -7) + ',' + priceStr.slice(-7);
+      }
+      setTotalPrice(priceStr);
 
       setCountDays(stayNightPrice);
     };
@@ -64,7 +77,9 @@ export const AccomsDetail = () =>{
       // // 기간 동안 숙박료
       const timeDifference = countEndDate.getTime() - countStartDate.getTime();
       const stayingNights = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-
+        
+      daysRef.current = stayingNights;
+      
       const stayingNightsPrice =
         parseInt(selected.price.replace(",", "")) * stayingNights;
 
@@ -72,8 +87,18 @@ export const AccomsDetail = () =>{
     }
   }, [endDate]);
 
+
+useEffect(()=>{
+}, [user])
+
   const handleConfirmBooking = () => {
     // Optional: combine dates for booking logic
+    if(!user.isLoggedIn){
+      window.alert("로그인을 먼저 해주세요");
+      navigate('/login');
+      return;
+    }
+    
     if (!startDate || !endDate) {
       console.error("Please select a date range to book.");
       window.alert(`시작 날짜와 종료 날짜를 기입해주세요. \n인원 추가가 없을시 최소 인원으로 신청됩니다.`);
@@ -82,11 +107,14 @@ export const AccomsDetail = () =>{
       window.alert(`숙박 선택 일자 \n${startDate[3]}.${monthStringToIndex(startDate[1])}.${startDate[2]} ~ ${endDate[3]}.${monthStringToIndex(endDate[1])}.${endDate[2]} \n으로 신청됩니다.`);
       navigate(`/booking/${params.accommodationId}`, {
         state: {
+          user,
           selected,
           dates: {
             startDate,
             endDate,
-          }
+          },
+          countDays,
+          daysRef,
         },
       });
     }
@@ -121,6 +149,7 @@ export const AccomsDetail = () =>{
           <p className="detail-score-wrap">
             <Score className="data-score-svg" /> {selected?.score}
           </p>
+          <p>{selected?.description}</p>
         </div>
 
         {/* react-calendar library area */}
@@ -128,7 +157,7 @@ export const AccomsDetail = () =>{
           <p className="detail-calendar-theme">숙박일정</p>
           <BookingCalendar
             setStartDate={setStartDate}
-            setEndDate={setEndtDate}
+            setEndDate={setEndDate}
           />
         </div>
 
@@ -187,7 +216,7 @@ export const AccomsDetail = () =>{
             )}
             <p className="detail-price">
               <span className="detail-price-won">
-                {countDays ? ` (예상가) ${countDays} 원 ` : "-"}
+                {countDays ? ` (예상가) ${totalPrice} 원 ` : "-"}
               </span>
             </p>
           </div>

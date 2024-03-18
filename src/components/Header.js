@@ -6,13 +6,19 @@ import { ReactComponent as Mypage } from "../assets/profile.svg"
 
 export const Header = () =>{
 
+
+  const handleAlert= ()=>{
+    return  window.alert("준비중입니다.");
+    
+  }
 return(
   <>
     <div className="header-wrap">
 
         <ul>
           <li className="header-logo">
-            <NavLink to="/search" >
+            <NavLink 
+              onClick={()=>handleAlert()} >
               <Search />
               </NavLink>
           </li>

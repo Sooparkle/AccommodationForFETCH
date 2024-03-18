@@ -1,27 +1,80 @@
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../store/authSlice";
+import { ReactComponent as RightBtn } from "../assets/righgBtn.svg";
 
 export const MyprofileList =()=>{
+const dispatch = useDispatch();
+const userInfor =  useSelector(state => state.auth)
+const userEmail = useSelector(state => state.auth.user_email);
+const userName = useSelector(state => state.auth.user_name);
+
+
 
   return(
-    <div>
-      <div>
-        <p>홍길동 님</p>
+    <>
+      <div className="mypage-header">
+        <p>My page</p>
       </div>
-      <div>
-        <p>알림</p>
-        <p>관심</p>
+
+      <div className="mypage-user">
+        <div className="mypage-user-wrap">
+          <img src={userInfor?.image} alt="user-image" />
+          <span>{userInfor?.user_name} 님</span>
+          <div className="mypage-user-else">
+            <div>
+              <p>예약중인 숙소</p>
+              <p>{userInfor?.bookings.length}</p>
+            </div>
+            <div>
+              <p>찜한 숙소</p>
+              <p>{userInfor?.bookings.length}</p>
+            </div>
+          </div>
+        </div>
+
+      <div className="mypage-user-benefit">
+        <ul>
+          <li>알림</li>
+          <li>주문내역</li>
+          <li>쿠폰</li>
+        </ul>
       </div>
+
       <hr />
-      <div>
-        <p>예약중</p>
-        <p>더보기</p>
+
+      <div className="mypage-setting-wrap">
+        <div>
+          <p>공지사항</p>
+          <RightBtn />
+        </div>
+
+        <div>
+          <p>고객센터</p>
+          <RightBtn />
+        </div>
+
+        <div>
+          <p>환경설정</p>
+          <RightBtn />
+        </div>
+
+        <div>
+          <p>약관 및 정책</p>
+          <RightBtn />
+        </div>
+
+        <p>현재 버전 1.0.10</p>
+
       </div>
       <button 
         type="button"
-        onClick={()=>{}}
+        className="mypage-logout-btn"
+        onClick={()=>{dispatch(logout())}}
       >
         log Out
       </button>
-    </div>
+      </div>
+    </>
   )
 
 }

@@ -12,6 +12,8 @@ import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
 import { BookingFinished } from "./components/BookingFinished";
+import { Login } from "./pages/Login";
+import { NaverCallBack } from "./components/NaverCallBack";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   {
     path:"/mypage",
     element:<Mypage />,
+  },
+  {
+    path:"/login",
+    element:<Login />
+  },
+  {
+    path:"/callback",
+    element: <NaverCallBack />
   }
 
 ])

@@ -1,27 +1,31 @@
 import React, {useRef, useState} from "react";
 
-export const SearchForm = () =>{
+export const SearchForm = ({onSearch}) =>{
   const [inputKey, setInputKey ] = useState();
-
-  const inputRef = useRef(null)
-  const handleOnSubmit = ()=>{
-    setInputKey(inputRef.current.value);
+  
+  const handleSearchSubmit = async (e) => {
+    e.preventDefault();
+  
+    try{
+      const response = await fetch(`https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/search?keyword=${inputKey}`);
+      const data = await response.json();
+      onSearch(data);
+    } catch (error) {
+      console.error('Search failed', error.message);
+    }
   }
 
-  console.log("inputKey", inputKey)
-  console.log("inputRef", inputRef)
-
   return(
-    <div>
-      <form onSubmit={()=>{handleOnSubmit()}} >
+    <div className="search-input-wrap">
+      <form onSubmit={(e)=>handleSearchSubmit(e)} >
           <input 
             type="text"
-            ref={inputRef}
             value={inputKey}
             onChange={(e)=>{setInputKey(e.target.value)}}
+            placeholder="어디로 떠날까요?"
             />
             <button
-              type="button"
+              type="submit"
               >조회</button>
       </form>
     </div>

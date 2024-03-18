@@ -14,8 +14,8 @@ const useFetchAccommodations = () => {
         setLoading(true);
         dispatch(fetchDataRequest());
 
-        // const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/accommodation");
-        const response = await fetch("http://localhost:4000/accommodation");
+        const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/accommodation");
+        // const response = await fetch("http://localhost:4000/accommodation");
         const data = await response.json();
 
         setAccomList(data);

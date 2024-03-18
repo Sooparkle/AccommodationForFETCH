@@ -12,6 +12,7 @@ export const DataList =()=>{
   }
 
 
+
   return (
 
     <div>
@@ -27,7 +28,7 @@ export const DataList =()=>{
               </div>
               <div className="data-list-detail">
                 <p><span>{item.province}</span><span>{item.cityGu}</span></p>
-                <p>{item.description}</p>
+                <p className='data-list-description'>{item.description}</p>
                 <p>{item.price} 원 / 박</p>
               </div>
               <button 
