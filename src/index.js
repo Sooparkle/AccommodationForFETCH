@@ -7,7 +7,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import { NotFound } from "./pages/NotFound";
-import { Search } from "./pages/Search";
 import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
@@ -32,10 +31,6 @@ const router = createBrowserRouter([
   {
     path:"/booking/result/",
     element:<BookingFinished />
-  },
-  {
-    path:"/search",
-    element:<Search />,
   },
   {
     path:"/mypage",
