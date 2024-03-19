@@ -2,7 +2,7 @@
 import React from 'react';
 import useFetchAccommodations from './UseFecthAccommodations';
 import { useNavigate } from "react-router-dom";
-// import { Score } from "../assets/score.svg";
+import { ReactComponent as Score } from "../assets/score.svg";
 
 export const DataList =()=>{
   const { accomList, loading, error } = useFetchAccommodations();
@@ -30,7 +30,7 @@ export const DataList =()=>{
               <div className="data-list-detail">
                 <p><span>{item.province}</span><span>{item.cityGu}</span></p>
                 <p className='data-list-description'>{item.description}</p>
-                {/* <div className="data-list-score"><Score className="data-score-svg" /> {item.score}</div> */}
+                <div className="data-list-score"><Score className="data-score-svg" /> {item.score}</div>
                 <p>{item.price} 원 / 박</p>
               </div>
               <button 
