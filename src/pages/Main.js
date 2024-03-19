@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { SearchForm } from "../components/SearchForm";
 import { DataList } from "../components/DataList";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
 import { SearchResults } from '../components/SearchResults';
 
 export const Main = () =>{

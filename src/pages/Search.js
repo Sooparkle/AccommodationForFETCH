@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchForm } from "../components/SearchForm"
+import { SearchForm } from "../components/SearchForm";
 
 export const Search =()=>{
 
@@ -11,9 +11,6 @@ export const Search =()=>{
       <SearchForm />
       <div className='content-wrap'>
         <div className='province'>
-          <ul>
-
-          </ul>
         </div>
       </div>
     </>
