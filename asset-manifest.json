@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/project3/static/css/main.03325c2c.css",
-    "main.js": "/project3/static/js/main.5a45b3c1.js",
-    "static/js/453.b29983da.chunk.js": "/project3/static/js/453.b29983da.chunk.js",
-    "static/media/profile.svg": "/project3/static/media/profile.1658811242a595bdbd92a4e7d66e9cf6.svg",
-    "index.html": "/project3/index.html",
-    "static/media/search.svg": "/project3/static/media/search.8b74229b6c1d79e17e045f1ac75226b6.svg",
-    "static/media/logo.svg": "/project3/static/media/logo.a4ef595954b88b90e1aa5621403cb1ff.svg",
-    "static/media/score.svg": "/project3/static/media/score.cef29356053e5b2695fa2b0f2419cfe8.svg",
-    "static/media/favorite.svg": "/project3/static/media/favorite.8f30a0646edff8f0f4bff7220377a044.svg",
-    "static/media/backBtn.svg": "/project3/static/media/backBtn.0be2199b3d689973d6a0c04e74b1a191.svg",
-    "static/media/righgBtn.svg": "/project3/static/media/righgBtn.784422f676e4694387cd0f5c7520cac8.svg",
-    "main.03325c2c.css.map": "/project3/static/css/main.03325c2c.css.map",
-    "main.5a45b3c1.js.map": "/project3/static/js/main.5a45b3c1.js.map",
-    "453.b29983da.chunk.js.map": "/project3/static/js/453.b29983da.chunk.js.map"
+    "main.css": "/static/css/main.d6108a17.css",
+    "main.js": "/static/js/main.7712c6b8.js",
+    "static/js/453.b29983da.chunk.js": "/static/js/453.b29983da.chunk.js",
+    "static/media/profile.svg": "/static/media/profile.1658811242a595bdbd92a4e7d66e9cf6.svg",
+    "index.html": "/index.html",
+    "static/media/search.svg": "/static/media/search.8b74229b6c1d79e17e045f1ac75226b6.svg",
+    "static/media/logo.svg": "/static/media/logo.a4ef595954b88b90e1aa5621403cb1ff.svg",
+    "static/media/score.svg": "/static/media/score.cef29356053e5b2695fa2b0f2419cfe8.svg",
+    "static/media/favorite.svg": "/static/media/favorite.8f30a0646edff8f0f4bff7220377a044.svg",
+    "static/media/backBtn.svg": "/static/media/backBtn.0be2199b3d689973d6a0c04e74b1a191.svg",
+    "static/media/righgBtn.svg": "/static/media/righgBtn.784422f676e4694387cd0f5c7520cac8.svg",
+    "main.d6108a17.css.map": "/static/css/main.d6108a17.css.map",
+    "main.7712c6b8.js.map": "/static/js/main.7712c6b8.js.map",
+    "453.b29983da.chunk.js.map": "/static/js/453.b29983da.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03325c2c.css",
-    "static/js/main.5a45b3c1.js"
+    "static/css/main.d6108a17.css",
+    "static/js/main.7712c6b8.js"
   ]
 }
