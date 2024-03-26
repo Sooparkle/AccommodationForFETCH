@@ -12,7 +12,6 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
   const test = useSelector(state=>state.auth);
 
-  console.log("useSelector", test);
 
   const handleOnSubmit = async (e) =>{
     e.preventDefault();
@@ -30,13 +29,13 @@ export const LoginForm = () => {
     };
 
     const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/login", options);
+    // const response = await fetch("http://localhost:4000/login", options);
 
     if(!response.ok){
       throw new Error(`Login failed with status ${response.status}`)
     }
     
     const data = await response.json();
-    console.log("login data", data)
     dispatch(login(data));
 
     navigate(-1)
@@ -44,6 +43,7 @@ export const LoginForm = () => {
 
     }
     catch(error){
+      console.error("Fetach failed", error.message)
       window.alert(`아이디나 비밀번호가 잘못됐습니다. 로그인을 다시 시도해주세요.\n${error.message}`)
       // throw new Error("fetch failed", error.message);
     }
@@ -72,7 +72,11 @@ export const LoginForm = () => {
 
   return (
     <div className="login-wrap">
-              <p>로그인 페이지</p>
+      <p>로그인 페이지
+        <span>(TEST ID/PW : 확인)
+          <span>ID : bamyanggang@gmail.com || PW : BIBI123</span>
+        </span>
+      </p>
 
       <form
         onSubmit={(e)=>handleOnSubmit(e)}

@@ -17,7 +17,6 @@ const authSlice = createSlice({
       state.user_name = action.payload.name;
       state.image = action.payload.image;
       state.bookings = action.payload.bookings;
-      console.log("test", state)
     },
     logout:(state)=>{
       state.isLoggedIn = false;

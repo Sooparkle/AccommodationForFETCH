@@ -129,6 +129,41 @@ footer{
 
 
 
+.ppt, .git-server, .git-client{
+  position: fixed;
+  right : 7%;
+  width: 50px;
+  height: 50px;
+  font-size: 10px;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.git-client{
+  bottom : 34%;
+  color:#fff;
+  background: var(--color-strong);
+}
+
+.git-server{
+  bottom : 22%;
+  background:var(--color-main)
+}
+
+
+.ppt{
+  bottom : 10%;
+  background: var(--color-light);
+  color : #555555
+}
+
 
 /* Data List Component */
 .data-list-area {
@@ -677,7 +712,29 @@ body.overflow-hidden {
 
 .login-wrap > p{
 padding: 1rem 0 ;
+position: relative;
 }
+
+.login-wrap > p > span >span{
+  visibility: hidden;
+  font-size: var(--font-small);
+  color: #757575;
+
+  position: absolute;
+  bottom:100%;
+  left: 50%;
+  width: max-content;
+  padding:.9rem .7rem;
+  border-radius: 8px;
+  transform: translate(-50%, 30%);
+
+  background: var(--color-light);
+  z-index: 1;
+  }
+
+  .login-wrap > p > span:hover > span{
+    visibility: visible;
+  }
 
 .login-wrap button{
   width: 100%;

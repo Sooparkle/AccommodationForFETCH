@@ -10,40 +10,39 @@ import { NotFound } from "./pages/NotFound";
 import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
-import { BookingFinished } from "./components/BookingFinished";
 import { Login } from "./pages/Login";
 import { NaverCallBack } from "./components/NaverCallBack";
+import { Main } from "./pages/Main";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { PAGE_PATHS } from "./constants";
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path:`${PAGE_PATHS.MAIN}`,
     element : <App />,
     errorElement : <NotFound />,
   },
   {
-    path: "/accomslist/:accommodationId",
+    path: `${PAGE_PATHS.DETAIL}/:accommodationId`,
     element:<AccomsDetail />,
   },
   {
-    path:"/booking/:accommodationId",
+    path:`${PAGE_PATHS.BOOKINGS}/:accommodationId`,
     element:<BookingConfirm />,
   },
   {
-    path:"/booking/result/",
-    element:<BookingFinished />
-  },
-  {
-    path:"/mypage",
+    path:`${PAGE_PATHS.MYPAGE}`,
     element:<Mypage />,
-  },
-  {
-    path:"/login",
-    element:<Login />
   },
   {
     path:"/callback",
     element: <NaverCallBack />
-  }
+  },
+
+  {
+    path:`${PAGE_PATHS.LOGIN}`,
+    element:<Login />
+  },
 
 ])
 

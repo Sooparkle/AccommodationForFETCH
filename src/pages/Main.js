@@ -26,7 +26,6 @@ export const Main = () =>{
       {
         searchResults.length <= 0 && <DataList />
       }
-
     </>
   )
 }

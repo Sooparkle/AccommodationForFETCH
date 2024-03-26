@@ -26,6 +26,10 @@ export const AccomsDetail = () =>{
   const daysRef = useRef(null);
   const user = useSelector(state => state.auth);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const monthStringToIndex = (monthString) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -45,12 +49,12 @@ export const AccomsDetail = () =>{
 
       let priceStr = stayNightPrice.toString();
   
-      // Insert comma at third position from the end
+      // 금액이 3자리를 넘어갈 때
       if (priceStr.length > 3) {
         priceStr = priceStr.slice(0, -3) + ',' + priceStr.slice(-3);
       }
     
-      // Insert comma at sixth position from the end if price length is more than 6
+      // 금액이 6자리를 넘어갈때
       if (priceStr.length > 7) {
         priceStr = priceStr.slice(0, -7) + ',' + priceStr.slice(-7);
       }
@@ -166,8 +170,8 @@ useEffect(()=>{
           <p className="detail-basic-info-theme">숙박정보</p>
           {
             selected && (
-            basics.map((basic_info) => {
-              return <p>- {basic_info}</p>
+            basics.map((basic_info,index) => {
+              return <p key={index}>- {basic_info}</p>
             })
             )
           }
@@ -177,8 +181,8 @@ useEffect(()=>{
           <p className="detail-benefit-info-theme">숙박혜택</p>
           {
             selected && (
-            benefits.map((benefit_info) => {
-              return <p>- {benefit_info}</p>
+            benefits.map((benefit_info,index) => {
+              return <p key={index}>- {benefit_info}</p>
             })
             )
           }
@@ -188,8 +192,8 @@ useEffect(()=>{
           <p className="detail-cancel-info-theme">숙박혜택</p>
           {
             selected && (
-              cancels.map((cancel) => {
-              return <p>- {cancel}</p>
+              cancels.map((cancel,index) => {
+              return <p key={index}>- {cancel}</p>
             })
             )
           }

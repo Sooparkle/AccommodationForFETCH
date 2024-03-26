@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "./Footer";
 import { ReactComponent as Back } from "../assets/backBtn.svg";
+import { PAGE_PATHS } from "../constants";
 
 export const BookingConfirm = () => {
   const location = useLocation();
@@ -21,6 +22,10 @@ export const BookingConfirm = () => {
   const bookingChild = location?.state.childNumbers;
   const bookingDatesPrice = location?.state.countDays;
   const bookingDats = (location?.state.daysRef.current) - 1;
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
 
   useEffect(() => {
@@ -51,19 +56,6 @@ export const BookingConfirm = () => {
   }, [adultNumbers, childNumbers]);
 
 
-
-
-  // const initialCounters = adultNumbers + childNumbers;
-
-  // const reducer = (state, action) =>{
-  //   switch(action.type) {
-  //     case 'adult-add':
-  //     return action.payload +1
-  //   }
-
-  // }
-
-  //   const [ initialNumbers, dispatch ] = useReducer(reducer, initialCounters);
 
   const monthStringToIndex = (data) => {
     const indexMonths = [
@@ -111,25 +103,20 @@ export const BookingConfirm = () => {
           totalPrice
         }),
       };
-      const respone = fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/bookings", options);
+      // const respone = fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/bookings", options);
+      const respone = await fetch("http://localhost:4000/bookings", options);
+      console.log(respone)
       const data = await respone.json();
-      console.log("the date has been sent", data);
-      window.alert(`예약이 완료됐습니다.\n마이페이지에서 확인 가능합니다.`);
-      navigate('/')
+
+    
+        window.alert(`예약이 완료됐습니다.\n마이페이지에서 확인 가능합니다.`);
+        navigate(PAGE_PATHS.MAIN)
+      
+  
     } 
     catch (error) {
-      throw new Error("Data has been failed", error);
+      throw new Error("Data has been failed", error.message);
     } 
-    // finally {
-    //   navigate(`/booking/result`, {
-    //     state: {
-    //       user: {
-    //         user_email: bookingUser.user_email,
-    //       },
-    //       accom_id: bookingAccom.id,
-    //     },
-    //   });
-    // }
   };
 
   const incrementAdult = () => {
@@ -289,7 +276,7 @@ export const BookingConfirm = () => {
           onClick={(e)=>handleOnClick(e)}
           className="confirm-payment-button"
           >
-          결제하기
+          얘약하기
           </button>
         <Footer />
       </div>
