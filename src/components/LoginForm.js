@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {login } from "../store/authSlice";
 import { NaverAuth } from "./NaverAuth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const [ inputEmail, setInputEmail ] = useState(''); 
   const [ inputPw, setInputPw ] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
   
   const dispatch = useDispatch();
   const test = useSelector(state=>state.auth);
+
+
 
 
   const handleOnSubmit = async (e) =>{
@@ -36,37 +39,22 @@ export const LoginForm = () => {
     }
     
     const data = await response.json();
-    dispatch(login(data));
+    if(!data){
+      window.alert(`아이디나 비밀번호가 잘못됐습니다. 로그인을 다시 시도해주세요.`)
+    }
 
-    navigate(-1)
-    console.log("useSelector inside fetch", test);
+    dispatch(login(data));
+    const from = location.state?.from || location.pathname || "/";
+    const accommodation = location.state?.accommodation
+    navigate(from, { replace: true , state :{ accommodation} });
 
     }
     catch(error){
       console.error("Fetach failed", error.message)
-      window.alert(`아이디나 비밀번호가 잘못됐습니다. 로그인을 다시 시도해주세요.\n${error.message}`)
-      // throw new Error("fetch failed", error.message);
+      window.alert("아이디 또는 비밀번호를 다시 한번 확인 해주세요.")
     }
 
   }
-
-  // const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
-
-  // const emailTest = ()=>{
-  //   if(!emailRegEx.test(inputEmail)) {
-  //     return window.alert("이메일 형식이 맞지 않습니다.");
-  //   }
-  // }
-
-  // const handleKeyPress = (e)=>{
-  //   e.preventDefault();
-  //   if (e.key ==='Enter'){
-  //     emailTest();
-
-  //   }
-
-  // }
-
 
 
 
@@ -89,6 +77,7 @@ export const LoginForm = () => {
             type="email"
             name="userEmail,"
             value={inputEmail}
+            autoComplete="off"
             onChange={(e) => {
               setInputEmail(e.target.value);
             }}
@@ -99,6 +88,7 @@ export const LoginForm = () => {
           <input
             type="password"
             name="userPw"
+            autoComplete="off"
             value={inputPw}
             onChange={(e) => {
               setInputPw(e.target.value);
@@ -112,7 +102,7 @@ export const LoginForm = () => {
           로그인 하기
         </button>
       </form>
-      {NaverAuth()}
+      {/* {NaverAuth()} */}
     </div>
   );
 };

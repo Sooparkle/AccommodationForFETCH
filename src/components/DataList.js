@@ -46,24 +46,23 @@ export const DataList =()=>{
         )
       }
       { !loading && !accomList && <p>데이터가 로딩 중입니다.</p> }
-      
-      <div
-        className="git-client"
-        onClick={()=>{window.open('https://docs.google.com/presentation/d/14TOEi4yO2Lkx2jMfaDJk-Sftx9EpYioa4syJSQ9FAik/edit?usp=sharing', '_blank')}}
-      > GIT<br />Client
-      </div>
+        <div
+          className="git-client"
+          onClick={()=>{window.open('https://github.com/Sooparkle/project3/tree/home/', '_blank')}}
+        > GIT<br />Client
+        </div>
 
-      <div
-        className="git-server"
-        onClick={()=>{window.open('https://github.com/Sooparkle/pj3_server/tree/main', '_blank')}}
-      > GIT<br />Server
-      </div>
+        <div
+          className="git-server"
+          onClick={()=>{window.open('https://github.com/Sooparkle/pj3_server/tree/main', '_blank')}}
+        > GIT<br />Server
+        </div>
 
-      <div
-        className="ppt"
-        onClick={()=>{window.open('https://docs.google.com/presentation/d/14TOEi4yO2Lkx2jMfaDJk-Sftx9EpYioa4syJSQ9FAik/edit?usp=sharing', '_blank')}}
-      > PPT확인
-      </div>
+        <div
+          className="ppt"
+          onClick={()=>{window.open('https://docs.google.com/presentation/d/14TOEi4yO2Lkx2jMfaDJk-Sftx9EpYioa4syJSQ9FAik/edit?usp=sharing', '_blank')}}
+        > PPT확인
+        </div>
     </div>
   )
 }

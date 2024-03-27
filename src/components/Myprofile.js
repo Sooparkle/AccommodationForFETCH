@@ -5,7 +5,6 @@ import { ReactComponent as RightBtn } from "../assets/righgBtn.svg";
 export const MyprofileList =()=>{
 const dispatch = useDispatch();
 const userInfor =  useSelector(state => state.auth)
-const userEmail = useSelector(state => state.auth.user_email);
 const userName = useSelector(state => state.auth.user_name);
 
 
@@ -27,7 +26,7 @@ const userName = useSelector(state => state.auth.user_name);
             </div>
             <div>
               <p>찜한 숙소</p>
-              <p>{userInfor?.bookings.length}</p>
+              <p>5</p>
             </div>
           </div>
         </div>

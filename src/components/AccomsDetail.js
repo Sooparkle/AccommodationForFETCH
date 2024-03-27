@@ -13,11 +13,7 @@ export const AccomsDetail = () =>{
   const location = useLocation();
   const navigate = useNavigate();
 
-  const selected = location.state.accommodation;
-  const basics = selected.accom_info.split('/');
-  const benefits = selected.accom_benefit.split('/');
-  const cancels = selected.cancel.split('/');
-
+  const [ selected, setSelected ] = useState();
   const [ startDate, setStartDate ] = useState(null);
   const [ endDate, setEndDate ] = useState(null);
   const [ isClicked, setIsClicked ] = useState(false);
@@ -25,6 +21,17 @@ export const AccomsDetail = () =>{
   const [ totalPrice, setTotalPrice ] = useState();
   const daysRef = useRef(null);
   const user = useSelector(state => state.auth);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+
+  const basics = selected?.accom_info.split('/');
+  const benefits = selected?.accom_benefit.split('/');
+  const cancels = selected?.cancel.split('/');
+
+
+  useEffect(() => {
+    setSelected(location.state?.accommodation)
+  }, [location, user.isLoggedIn]);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -99,7 +106,11 @@ useEffect(()=>{
     // Optional: combine dates for booking logic
     if(!user.isLoggedIn){
       window.alert("로그인을 먼저 해주세요");
-      navigate('/login');
+      navigate('/login', 
+        {state : {
+          from : location.pathname,
+          accommodation : selected},
+      });
       return;
     }
     
@@ -125,7 +136,7 @@ useEffect(()=>{
   };
   
   return (
-    <div className="detail-main">
+    <div className="detail-main" >
       <div className="detail-area">
         
         <div className="detail-header">

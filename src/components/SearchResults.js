@@ -7,7 +7,6 @@ export const SearchResults = ({accomList}) =>{
     navigate(`/accomslist/${accommodation.id}`, {state:{accommodation}})
   }
 
-  console.log("SearchResults",accomList )
 
   const searchKeyword = accomList?.data;
 

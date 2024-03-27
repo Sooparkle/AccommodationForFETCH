@@ -4,21 +4,22 @@ import { Login } from "../pages/Login";
 import { MyprofileList } from "../components/Myprofile";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { LoginForm } from '../components/LoginForm';
 
 export const Mypage = () =>{
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   useEffect(()=>{
-  }, [isLoggedIn])
+
+  },[isLoggedIn])
 
   return (
     <div className='main'>
       <div className='mypage-wrap'>
-        {isLoggedIn ? (
-            <MyprofileList /> // Existing user profile
-          ) : (
-          <Login /> 
-        )}
+        { 
+        isLoggedIn ?  <MyprofileList />
+          : <LoginForm /> 
+        }
       </div>
         <Header />
         <Footer />

@@ -46,7 +46,7 @@ button:hover{
 
 
 .main{
-  width: 680px;
+  max-width: 680px;
   display: grid;
   /* place-content: center; */
   place-items: center;

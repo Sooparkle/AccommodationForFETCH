@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+// import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -11,15 +11,14 @@ import { Mypage } from "./pages/Mypage";
 import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
 import { Login } from "./pages/Login";
-import { NaverCallBack } from "./components/NaverCallBack";
-import { Main } from "./pages/Main";
-import { ScrollToTop } from "./components/ScrollToTop";
 import { PAGE_PATHS } from "./constants";
+import { CallbackNaver } from "./components/CallbackNaver";
+import { Main } from "./pages/Main";
 
 const router = createBrowserRouter([
   {
     path:`${PAGE_PATHS.MAIN}`,
-    element : <App />,
+    element : <Main />,
     errorElement : <NotFound />,
   },
   {
@@ -31,16 +30,15 @@ const router = createBrowserRouter([
     element:<BookingConfirm />,
   },
   {
-    path:`${PAGE_PATHS.MYPAGE}`,
+    path:`/${PAGE_PATHS.MYPAGE}`,
     element:<Mypage />,
   },
   {
-    path:"/callback",
-    element: <NaverCallBack />
+    path:`/${PAGE_PATHS.CALLBOOK}`,
+    element: <CallbackNaver />
   },
-
   {
-    path:`${PAGE_PATHS.LOGIN}`,
+    path:`/${PAGE_PATHS.LOGIN}`,
     element:<Login />
   },
 
@@ -57,7 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// // If you want to start measuring performance in your app, pass a function
+// // to log results (for example: reportWebVitals(console.log))
+// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// reportWebVitals();
