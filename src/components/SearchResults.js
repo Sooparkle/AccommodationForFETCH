@@ -26,12 +26,7 @@ export const SearchResults = ({accomList}) =>{
               <p>{item.description}</p>
               <p>{item.price} 원 / 박</p>
             </div>
-            <button 
-              className="data-list-button"
-              onClick={()=>handleOnDetail(item)}
-            > 
-              상세보기
-            </button>
+
           </li>
           )
         )}

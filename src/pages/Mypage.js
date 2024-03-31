@@ -14,6 +14,7 @@ export const Mypage = () =>{
   },[isLoggedIn])
 
   return (
+    <>
     <div className='main'>
       <div className='mypage-wrap'>
         { 
@@ -22,7 +23,8 @@ export const Mypage = () =>{
         }
       </div>
         <Header />
-        <Footer />
     </div>
+        <Footer />
+        </>
   );
 };

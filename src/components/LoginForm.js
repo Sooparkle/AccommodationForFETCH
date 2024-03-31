@@ -61,9 +61,7 @@ export const LoginForm = () => {
   return (
     <div className="login-wrap">
       <p>로그인 페이지
-        <span>(TEST ID/PW : 확인)
-          <span>ID : bamyanggang@gmail.com || PW : BIBI123</span>
-        </span>
+
       </p>
 
       <form
@@ -102,6 +100,9 @@ export const LoginForm = () => {
           로그인 하기
         </button>
       </form>
+      <p className="login-test-key">(TEST ID/PW 확인)
+          <span>ID : bamyanggang@gmail.com || PW : BIBI123</span>
+      </p>
       {/* {NaverAuth()} */}
     </div>
   );

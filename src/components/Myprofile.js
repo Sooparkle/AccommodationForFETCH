@@ -29,6 +29,7 @@ const userName = useSelector(state => state.auth.user_name);
               <p>5</p>
             </div>
           </div>
+        <p>(프로필 이미지, 이름, 예약중인 숙소를 제외 나머지 가 데이터)</p>
         </div>
 
       <div className="mypage-user-benefit">

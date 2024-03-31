@@ -16,12 +16,6 @@ return(
     <div className="header-wrap">
 
         <ul>
-          <li className="header-logo">
-            <NavLink 
-              onClick={()=>handleAlert()} >
-              <Search />
-              </NavLink>
-          </li>
           <li className="header-seach">
             <NavLink to="/" >
               <Logo />

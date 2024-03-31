@@ -20,12 +20,11 @@ export const Main = () =>{
       <SearchForm 
         onSearch={handleSearch}
         onClick={()=>{navigate("/")}}/>
-        <hr />
-      <SearchResults accomList={searchResults} />
+
       {
         searchResults.length <= 0 && <DataList />
       }
-  <Header />
+      <Header />
     </div>
   )
 }

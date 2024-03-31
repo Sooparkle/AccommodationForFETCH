@@ -21,7 +21,7 @@ export const BookingConfirm = () => {
   const bookingAdult = location?.state.adultNumbers;
   const bookingChild = location?.state.childNumbers;
   const bookingDatesPrice = location?.state.countDays;
-  const bookingDats = (location?.state.daysRef.current) - 1;
+  const bookingDats = (location?.state.daysRef.current);
 
   useEffect(() => {
     window.scrollTo(0, 0); 
@@ -146,6 +146,7 @@ export const BookingConfirm = () => {
 
 
   return (
+    <>
     <div className="confirm-main">
       {/* contents area */}
       <div className="confirm-area">
@@ -269,7 +270,7 @@ export const BookingConfirm = () => {
             <p>추가 인원 : 성인 {adultNumbers} || 어린이 {childNumbers}</p>
             <p>총 인원 : <span> {totalNumber} </span></p>
           </div>
-          <h2>총 금액 : {totalPrice} 원</h2>
+          <p className="confirm-finial-price">총 금액 : <span>{totalPrice}</span> 원</p>
         </div>
         <button 
           type="button"
@@ -278,8 +279,9 @@ export const BookingConfirm = () => {
           >
           얘약하기
           </button>
-        <Footer />
       </div>
     </div>
+  <Footer />
+      </>
   );
 };

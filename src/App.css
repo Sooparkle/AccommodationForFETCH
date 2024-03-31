@@ -12,6 +12,9 @@
 
   --border-basic : #c9c9c9;
 
+
+  --width-min:300px;
+  --width-max:680px;
 }
 
 #root{
@@ -46,13 +49,14 @@ button:hover{
 
 
 .main{
-  max-width: 680px;
+  min-width: var(--width-min);
+  max-width: var(--width-max);
   display: grid;
-  /* place-content: center; */
-  place-items: center;
   margin-inline: auto;
   padding-bottom: 68px;
-
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
   box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
   /* border-left: 1px solid var(--color-light);
 border-right: 1px solid var(--color-light); */
@@ -121,10 +125,14 @@ border-right: 1px solid var(--color-light); */
 
 
 footer{
+  min-width: var(--width-min);
+  max-width: var(--width-max);
   padding:1rem 24px;
   font-size: 12px;
   color : #999;
   background: #efefef;
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 
@@ -175,10 +183,9 @@ footer{
 }
 
 .data-list-each{
-  width:600px;
   display: grid;
   justify-content:center;
-
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 }
 
 .data-list-description{
@@ -187,29 +194,26 @@ footer{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .data-img-wrap{
-  width: 520px;
-  height: 500px;
+
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 20px;
 }
 
 .data-list-img{
-  width:100%;
-  height:100%;
+display: block;
+max-width: 100%;
+margin-bottom: 20px;
+border-radius: 12px;
 }
 
 .data-list-detail p:nth-last-of-type(1){
   margin-top: 10px;
   font-weight: bold;
-}
-
-.data-list-detail{
-  width: 520px;
 }
 
 .data-list-location{
@@ -227,8 +231,7 @@ footer{
 .data-list-detail{
   color : #656565;
   position: relative;
-  /* grid-row:1; */
-  /* grid-column: 1; */
+  width: auto;
 }
 
 .data-list-score{
@@ -262,17 +265,6 @@ footer{
 /* bookingConfirm */
 
 
-
-
-
-
-
-
-.confirm-brief-booking,
-.confirm-booking-info,
-.confirm-accommodation-info{
-
-}
 
 
 
@@ -337,26 +329,21 @@ footer{
 
 
 /* Data detail area */
-.detail-main
+.detail-main, .confirm-main
 {
-  width: 680px;
+  min-width: var(--width-min);
+  max-width: var(--width-max);
   display: grid;
-  place-content: center;
+  /* place-content: center; */
   /* place-items: center; */
   margin-inline: auto;
   padding-bottom: 68px;
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
+  box-sizing: border-box;
 }
 
-.confirm-main
-{
-  width: 680px;
-  display: grid;
-  place-content: center;
-  /* place-items: center; */
-  margin-inline: auto;
-  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
-}
 
 .detail-header,
 .confirm-header{
@@ -364,7 +351,7 @@ footer{
   top:0;
   left:0;
   right:0;
-  width :680px;
+  width:100%;
   height:64px;
   background: #fff;
   display: flex;
@@ -387,41 +374,38 @@ footer{
   /* place-content: center; */
   position: relative;
   grid-row-gap:54px;
-  justify-items: center;
+  
 }
 
 
 .detail-describe{
-  width: 580px;
   height: 100%;
   position: relative;
 }
 
 .detail-describe > P:nth-last-of-type(1){
-  margin-top: 10px;
+  margin-top: 20px;
+  line-height: 20px;
 }
 
 .detail-score-wrap{
   position: absolute;
-  bottom : 100px;
-  right:0;
+  top:0;
+  right:10px;
 }
 
 .detail-area img{
+  display: block;
   border-radius: 8px;;
-  width: 100%;
+  max-width: 100%;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.8);
 }
 
 .detail-area h2{
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-.confirm-number-add button{
-  padding: .5rem 1rem;
-  border-radius: 8px;
-}
 
 .detail-number-add-describe{
   font-size: 12px;
@@ -439,8 +423,8 @@ footer{
 
 
 .detail-basic-info, .detail-benefit-info, .detail-cancel-info{
-  width: 580px;
-  /* margin-bottom: 4px; */
+  padding: 0 1rem;
+  box-sizing: border-box;
   color : #757575;
   margin-bottom: 2rem;;
 }
@@ -456,12 +440,17 @@ footer{
   margin-bottom: 20px;
 }
 
+.detail-calendar .react-calendar{
+  width:auto;
+}
+
 .detail-button-area{
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 680px;
+  min-width:var(--width-min);
+  max-width: var(--width-max);
   height: 68px;
   margin-inline: auto;
   display: grid;
@@ -484,12 +473,13 @@ footer{
 
 .detail-price-won{
   font-size: 16px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 
 .detail-submit-button {
-  width: 200px;
+  padding: 0 2rem;
+  width: auto;
   height:48px;
   border-radius: 8px;
   border:1px solid var(--color-light)
@@ -547,8 +537,6 @@ footer{
 
 
 
-
-
 .confirm-extra-number-theme{
   margin-bottom: 10px;
 }
@@ -561,15 +549,33 @@ footer{
   font-size: 12px;
   color:#999;
 }
+
 .confirm-number-add{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width:100%;
   padding:1rem;
   border: 2px solid var(--color-main);
   border-radius: 12px;
   box-sizing: border-box;
 }
+
+.confirm-number-add > div >p{
+  position: relative;
+}
+.detail-number-add-describe,
+.detail-number-add-describe
+{
+  position: absolute;
+  left:6px;
+  bottom:-6px;
+}
+
+.confirm-number-add button{
+  padding: .5rem 1rem;
+  border-radius: 8px;
+}
+
 
 .confirm-calendar-Sday{
   color : var(--color-main);
@@ -583,18 +589,25 @@ footer{
 }
 
 .confirm-booking-info{
-  border-top: 1px solid #c9c9c9;
+  border-top: 2px solid #c9c9c9;
   padding-inline: 2rem;
   padding-top:2rem;
 }
 
-.confirm-booking-info >h2 {
+.confirm-finial-price {
   text-align: right;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 20px;
   padding-top: 19px;
   border-top: 1px solid #c9c9c9;
 }
+
+.confirm-finial-price >span {
+  font-weight: 700;
+  font-size: var(--font-extra-strong);
+}
+
+
 
 .confirm-booking-date{
   display: inline-block;
@@ -620,7 +633,7 @@ footer{
 }
 
 .confirm-payment-button{
-  width:300px;
+  width:auto;
   margin-inline:auto;
   padding: 1.2rem 3rem;
   background:  var(--color-main);
@@ -696,27 +709,17 @@ body.overflow-hidden {
 
 
 
-
-
-/* My page CSS Area */
-.mypage-wrap{
-  height: 100svh;
-  display: grid;
-  justify-items: center;
-  min-width:400px;
-  align-items: center;
-  padding-bottom: 80px;
+.login-wrap{
+  
 }
-
-
 
 .login-wrap > p{
 padding: 1rem 0 ;
 position: relative;
 }
 
-.login-wrap > p > span >span{
-  visibility: hidden;
+.login-test-key > span {
+  /* visibility: hidden; */
   font-size: var(--font-small);
   color: #757575;
 
@@ -726,15 +729,13 @@ position: relative;
   width: max-content;
   padding:.9rem .7rem;
   border-radius: 8px;
-  transform: translate(-50%, 30%);
+  transform: translate(-50%, 200%);
 
   background: var(--color-light);
   z-index: 1;
   }
 
-  .login-wrap > p > span:hover > span{
-    visibility: visible;
-  }
+
 
 .login-wrap button{
   width: 100%;
@@ -771,7 +772,7 @@ position: relative;
   font-size: 17px;
   border: none;
   outline: none;
-  width:300px;
+  width:auto;
 }
 
 .email-wrap, .pw-wrap{
@@ -805,12 +806,11 @@ position: relative;
 
 
 
-
+/* My page CSS Area */
 
 .mypage-user{
-  width:500px;
+  margin-top: 30px;
   border-radius: 18px;
-  padding: 2rem 1.2rem;
 }
 
 .mypage-header{
@@ -822,6 +822,7 @@ position: relative;
   /* line-height: 64px; */
   border-bottom: 1px solid var(--border-basic) ;
 }
+
 
 .mypage-user-wrap{
   margin-bottom: 50px;
@@ -895,11 +896,12 @@ position: relative;
 .mypage-logout-btn{
   display: block;
   width:200px;
-  margin: 40px auto 0 ;
+  margin: 40px auto ;
   padding:0.8rem 0.5rem;
   border-radius: 8px;
   color : var(--border-basic);
   border: 1px solid var(--border-basic);
+
 }
 
 
@@ -911,12 +913,33 @@ position: relative;
 
 /* Search area */
 .search-input-wrap{
+  width : fit-content;
+  margin-inline: auto;
+  box-sizing: border-box;
   margin-top: 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding:1rem 3rem;
   border-radius: 28px;
+
+}
+
+.search-input-wrap form{
+  transition : border-color .6s;
+  position: relative;
 }
 
 .search-input-wrap input{
   border: none;
+  line-height: 26px;
+}
+
+.search-input-wrap form:focus-within{
+  border-color: var(--color-main);
+}
+
+.search-input-wrap button{
+  position: relative;
+  top: 2px;
+  border-radius: 4px;
+  background: var(--color-main);
 }

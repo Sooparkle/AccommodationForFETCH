@@ -5,5 +5,5 @@ export const PAGE_PATHS = {
   BOOKINGS : '/booking',  //예약 몸통,
   MYPAGE : '/mypage',  //마이페이지,
   LOGIN : '/login',
-  CALLBOOK: ''
+  CALLBOOK: '/callback'
 }

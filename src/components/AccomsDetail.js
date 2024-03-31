@@ -200,7 +200,7 @@ useEffect(()=>{
         </div>
 
         <div className="detail-cancel-info">
-          <p className="detail-cancel-info-theme">숙박혜택</p>
+          <p className="detail-cancel-info-theme">취소환불</p>
           {
             selected && (
               cancels.map((cancel,index) => {
@@ -231,7 +231,7 @@ useEffect(()=>{
             )}
             <p className="detail-price">
               <span className="detail-price-won">
-                {countDays ? ` (예상가) ${totalPrice} 원 ` : "-"}
+                {countDays ? ` (예상가) : ${totalPrice} 원 ` : "(예상가) : -"}
               </span>
             </p>
           </div>
@@ -244,7 +244,7 @@ useEffect(()=>{
             예약하기
           </button>
         </div>
-      <Footer />
+      {/* <Footer /> */}
       </div>
     </div>
   );
