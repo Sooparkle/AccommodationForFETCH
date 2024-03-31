@@ -103,9 +103,8 @@ export const BookingConfirm = () => {
           totalPrice
         }),
       };
-      // const respone = fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/bookings", options);
-      const respone = await fetch("http://localhost:4000/bookings", options);
-      console.log(respone)
+      const respone = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/bookings", options);
+      // const respone = await fetch("http://localhost:4000/bookings", options);
       const data = await respone.json();
 
     

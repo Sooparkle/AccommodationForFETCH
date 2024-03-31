@@ -13,10 +13,12 @@ export const Mypage = () =>{
 
   },[isLoggedIn])
 
+
   return (
     <>
     <div className='main'>
       <div className='mypage-wrap'>
+
         { 
         isLoggedIn ?  <MyprofileList />
           : <LoginForm /> 

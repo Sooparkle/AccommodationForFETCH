@@ -772,7 +772,7 @@ position: relative;
   font-size: 17px;
   border: none;
   outline: none;
-  width:auto;
+  min-width:280px;
 }
 
 .email-wrap, .pw-wrap{
@@ -821,6 +821,11 @@ position: relative;
   height: 64px;
   /* line-height: 64px; */
   border-bottom: 1px solid var(--border-basic) ;
+}
+
+.mypage-wrap{
+  height: 100dvh;
+  margin-inline: auto;
 }
 
 
@@ -896,7 +901,7 @@ position: relative;
 .mypage-logout-btn{
   display: block;
   width:200px;
-  margin: 40px auto ;
+  margin-inline: auto;
   padding:0.8rem 0.5rem;
   border-radius: 8px;
   color : var(--border-basic);
