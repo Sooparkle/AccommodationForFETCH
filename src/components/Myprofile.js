@@ -72,7 +72,7 @@ const userName = useSelector(state => state.auth.user_name);
         log Out
       </button>
       </div>
- 
+
       </div>
     </>
   )

@@ -17,6 +17,14 @@
   --width-max:680px;
 }
 
+a{
+  color :#000;
+}
+
+a:visited {
+  color : black;
+}
+
 #root{
 font-family: "Noto Serif KR", serif;
 }
@@ -127,12 +135,14 @@ border-right: 1px solid var(--color-light); */
 footer{
   min-width: var(--width-min);
   max-width: var(--width-max);
-  padding:1rem 24px;
+  padding:3rem 24px 6rem 24px;
   font-size: 12px;
   color : #999;
   background: #efefef;
   margin-inline: auto;
   box-sizing: border-box;
+  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
+
 }
 
 
@@ -212,6 +222,7 @@ border-radius: 12px;
 }
 
 .data-list-detail p:nth-last-of-type(1){
+  color:#000;
   margin-top: 10px;
   font-weight: bold;
 }
@@ -710,7 +721,9 @@ body.overflow-hidden {
 
 
 .login-wrap{
-  
+  box-sizing: border-box;
+  padding-top: 4rem;
+  height: 100vh;
 }
 
 .login-wrap > p{
@@ -741,6 +754,7 @@ position: relative;
   width: 100%;
   padding: 1rem 3.2rem;
   border-radius: 12px;
+  color : #000;
 }
 
 .login-wrap form{
@@ -769,6 +783,7 @@ position: relative;
 .login-wrap input[type=email],
 .login-wrap input[type=password]
 {
+  font-family: system-ui;
   font-size: 17px;
   border: none;
   outline: none;
@@ -790,6 +805,11 @@ position: relative;
 
 .login-wrap button[type=submit]{
   border: 1px solid var(--color-light);
+  color: var(--color-strong);
+}
+
+.login-wrap button[type=submit]:hover{
+  color: #fff;
 }
 .naver-btn{
   background: #03c75a;
@@ -824,7 +844,7 @@ position: relative;
 }
 
 .mypage-wrap{
-  height: 100dvh;
+  /* height: 100%; */
   margin-inline: auto;
 }
 

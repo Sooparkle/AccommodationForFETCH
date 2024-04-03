@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { SearchForm } from "../components/SearchForm";
 import { DataList } from "../components/DataList";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
-import { SearchResults } from '../components/SearchResults';
-import { Header } from '../components/Header';
-
-export const Main = () =>{
-  const [ searchResults, setSearchResults ] = useState([]);
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+export const Main = () => {
+  const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
 
-
-  const handleSearch = (newSearchResults) =>{
-    setSearchResults(newSearchResults)
-  }
+  const handleSearch = (newSearchResults) => {
+    setSearchResults(newSearchResults);
+  };
 
   return (
-    <div className='main'>
+    <>
+      <div className="main">
+        <SearchForm
+          onSearch={handleSearch}
+          onClick={() => {
+            navigate("/");
+          }}
+        />
 
-      <SearchForm 
-        onSearch={handleSearch}
-        onClick={()=>{navigate("/")}}/>
-
-      {
-        searchResults.length <= 0 && <DataList />
-      }
-      <Header />
-    </div>
-  )
-}
+        {searchResults.length <= 0 && <DataList />}
+        <Header />
+      </div>
+      <Footer />
+    </>
+  );
+};
