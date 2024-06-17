@@ -158,7 +158,6 @@ export const DataList = ({ fetchingDateList }) => {
 
         </ul>
 
-
       </section>
     </>
   );

@@ -64,6 +64,18 @@ export const Main = () => {
     searchResultAnswer = fetchingDateList;
   }
 
+  console.log("searchResultAnswer", searchResultAnswer)
+  console.log("searchResultAnswer", searchResultAnswer.length)
+
+
+let endCommonet;
+if(status==="successful"){
+  endCommonet = <p style={{textAlign:"center", color:"#c5c5c5"}}>목록 -끝-</p>
+  if(searchResultAnswer.length === 0){
+    endCommonet = <p style={{textAlign:"center", color:"#c5c5c5"}}>검색 결과가 없습니다.</p>
+  }
+}
+
   return (
     <>
       <div className="main">
@@ -94,10 +106,7 @@ export const Main = () => {
               
             )
           }
-
-          {
-            status=== 'successful' && <p style={{textAlign:"center", color:"#c5c5c5"}}>목록 -끝-</p>
-          }
+          {endCommonet}
 
         <Header />
       </div>
