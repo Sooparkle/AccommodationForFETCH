@@ -43,7 +43,7 @@ export const AccomsDetail = () =>{
     return months.indexOf(monthString)+1;
   }
 
-
+//Count based on Night than put comma in order to easy to read
   useEffect(()=>{
     if(endDate){
       const counterStartDate = new Date(startDate[3], monthStringToIndex(startDate[1]),startDate[2]);
@@ -85,7 +85,7 @@ export const AccomsDetail = () =>{
         endDate[2]
       );
 
-      // // 기간 동안 숙박료
+      // 기간 동안 숙박료
       const timeDifference = countEndDate.getTime() - countStartDate.getTime();
       const stayingNights = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
         
@@ -99,8 +99,8 @@ export const AccomsDetail = () =>{
   }, [endDate]);
 
 
-useEffect(()=>{
-}, [user])
+  useEffect(()=>{
+  }, [user])
 
   const handleConfirmBooking = () => {
     // Optional: combine dates for booking logic
@@ -229,11 +229,11 @@ useEffect(()=>{
             ) : (
               <p className="detail-calendar-day-check">날짜를 입력해 주세요.</p>
             )}
-            <p className="detail-price">
+            {/* <p className="detail-price">
               <span className="detail-price-won">
                 {countDays ? ` (예상가) : ${totalPrice} 원 ` : "(예상가) : -"}
               </span>
-            </p>
+            </p> */}
           </div>
 
           <button

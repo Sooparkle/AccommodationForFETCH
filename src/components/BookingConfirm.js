@@ -23,11 +23,14 @@ export const BookingConfirm = () => {
   const bookingDatesPrice = location?.state.countDays;
   const bookingDats = (location?.state.daysRef.current);
 
+
+  // scroll Top
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []);
 
 
+  // Total Price and put comma at the Total price in order to easy to read
   useEffect(() => {
     const totalNumber =
       parseInt(bookingAccom.min_occupancy) + parseInt(adultNumbers) + parseInt(childNumbers);
@@ -51,12 +54,10 @@ export const BookingConfirm = () => {
       }
       setTotalPrice(priceStr);
 
-      
-    // console.log("totalPrice", totalPrice);
   }, [adultNumbers, childNumbers]);
 
 
-
+// Convert month Eng to Number 
   const monthStringToIndex = (data) => {
     const indexMonths = [
       "Jan",
@@ -75,8 +76,9 @@ export const BookingConfirm = () => {
     return indexMonths.indexOf(data) + 1;
   };
 
+
+// Confirm Button
   const handleOnClick = async (e) => {
-    // console.log("Date", e);
     try {
       const options = {
         method: "POST",
@@ -105,19 +107,19 @@ export const BookingConfirm = () => {
       };
       const respone = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/bookings", options);
       // const respone = await fetch("http://localhost:4000/bookings", options);
+      
       const data = await respone.json();
-
-    
         window.alert(`예약이 완료됐습니다.\n마이페이지에서 확인 가능합니다.`);
         navigate(PAGE_PATHS.MAIN)
-      
-  
+
     } 
     catch (error) {
-      throw new Error("Data has been failed", error.message);
+      throw ("Data has been failed", error);
     } 
   };
 
+
+  // Increasing and Decreasing extra person 
   const incrementAdult = () => {
     if (adultNumbers + childNumbers < bookingAccom?.max_occupancy) {
       setAdultNumbers((prevAdultNumbers) => prevAdultNumbers + 1);
@@ -155,23 +157,32 @@ export const BookingConfirm = () => {
           <div></div>
         </div>
 
-        <div className="confirm-user-info">
-          <p className="confirm-user-info-theme">사용자 정보</p>
-          <div>
-            <p>이름 : {bookingUser?.user_name} </p>
-            <p>이메일 : {bookingUser?.user_email}</p>
+        <section
+          style={{
+            background : "#e3f5db",
+            padding : "1rem 0",
+            borderRadius: "1.4rem",
+          }}
+        >
+          <div className="confirm-user-info">
+            <p className="confirm-user-info-theme">사용자 정보</p>
+            <div>
+              <p>이름 : {bookingUser?.user_name} </p>
+              <p>이메일 : {bookingUser?.user_email}</p>
+            </div>
           </div>
-        </div>
 
-        <div className="confirm-accommodation-info">
-          <p className="confirm-accommodation-info-theme">숙박 정보</p>
-          <div>
-            <p>숙박 이름 : {bookingAccom?.accom_name}</p>
-            <p>
-              숙박 장소 : {bookingAccom?.city} {bookingAccom?.cityGu}
-            </p>
+          <div className="confirm-accommodation-info">
+            <p className="confirm-accommodation-info-theme">숙박 정보</p>
+            <div>
+              <p>숙박 이름 : {bookingAccom?.accom_name}</p>
+              <p>
+                숙박 장소 : {bookingAccom?.city} {bookingAccom?.cityGu}
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
+
 
         <div className="confirm-extra-numbers">
           <p className="confirm-extra-number-theme">추가 인원</p>
@@ -276,7 +287,7 @@ export const BookingConfirm = () => {
           onClick={(e)=>handleOnClick(e)}
           className="confirm-payment-button"
           >
-          얘약하기
+            예약하기
           </button>
       </div>
     </div>

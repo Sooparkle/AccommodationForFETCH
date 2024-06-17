@@ -5,8 +5,8 @@ import { NaverAuth } from "./NaverAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
-  const [ inputEmail, setInputEmail ] = useState(''); 
-  const [ inputPw, setInputPw ] = useState('');
+  const [ inputEmail, setInputEmail ] = useState('bamyanggang@gmail.com'); 
+  const [ inputPw, setInputPw ] = useState('BIBI123');
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -59,10 +59,8 @@ export const LoginForm = () => {
 
 
   return (
-    <div className="login-wrap">
-      <p>로그인 페이지
-
-      </p>
+    <article className="login-wrap">
+      <p>로그인 페이지</p>
 
       <form
         onSubmit={(e)=>handleOnSubmit(e)}
@@ -81,6 +79,8 @@ export const LoginForm = () => {
             }}
           />
         </div>
+
+        {/* 비밀번호 입력폼 */}
         <div className="pw-wrap">
           <label htmlFor="pw">비밀번호</label>
           <input
@@ -100,10 +100,8 @@ export const LoginForm = () => {
           로그인 하기
         </button>
       </form>
-      <p className="login-test-key">(TEST ID/PW 확인)
-          <span>ID : bamyanggang@gmail.com || PW : BIBI123</span>
-      </p>
+
       {/* {NaverAuth()} */}
-    </div>
+    </article>
   );
 };
