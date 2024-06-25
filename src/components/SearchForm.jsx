@@ -63,9 +63,7 @@ export const SearchForm = ({ searchResults ,setSearchResults,onSearch }) => {
                 to="/" >
                 <Logo />
               </Link>
-              <div 
-                className="search-input-text"
-              >
+
                 <input
                   type="text"
                   value={searchResults}
@@ -74,8 +72,6 @@ export const SearchForm = ({ searchResults ,setSearchResults,onSearch }) => {
                   }}
                   placeholder="어디로 떠날까요?"
                 />
-
-              </div>
             {/* <button type="submit">조회</button> */}
 
 
