@@ -971,7 +971,8 @@ position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex:1;
+  max-width: 100px;
+  width: 100%;
 }
 
 
@@ -989,21 +990,21 @@ position: relative;
   fill:#82bd69;
 }
 
-.search-input-wrap .search-input-text{
-  flex:3
-}
 
 .search-input-wrap input{
   border: none;
   line-height: 26px;
-  margin: 1rem 0; 
+  margin: 1rem .5rem; 
   font-family: 'Noto Serif KR';
-  width: 300px;
+  max-width: 300px;
+  min-width: 80px;
+  width: 100%;
   margin-left: 10px;
   
 }
-.search-input-wrap input:focus-visible{
-  border:#82bd69 ;
+
+.search-input-wrap input[type=text]:focus-visible{
+  border:1px solid red;
 }
 
 .search-input-classify{
