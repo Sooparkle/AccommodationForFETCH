@@ -14,6 +14,8 @@ import { Login } from "./pages/Login";
 import { PAGE_PATHS } from "./constants";
 import { CallbackNaver } from "./components/CallbackNaver";
 import { Main } from "./pages/Main";
+import { Notice } from "./pages/Notice";
+
 
 const router = createBrowserRouter([
   {
@@ -41,7 +43,19 @@ const router = createBrowserRouter([
     path:`/${PAGE_PATHS.LOGIN}`,
     element:<Login />
   },
-
+  {
+    path :`${PAGE_PATHS.NOTICE}`,
+    element : <Notice />
+  },
+  {
+    path :`${PAGE_PATHS.CALLBOOK}`
+  },
+  {
+    path :`${PAGE_PATHS.SETTING}`
+  },
+  {
+    path :`${PAGE_PATHS.CONTRACT}`
+  },
 ])
 
 

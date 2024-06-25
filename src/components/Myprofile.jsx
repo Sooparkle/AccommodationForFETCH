@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/authSlice";
 import { ReactComponent as RightBtn } from "../assets/righgBtn.svg";
+import { useNavigate } from "react-router-dom";
 
 export const MyprofileList =()=>{
 const dispatch = useDispatch();
 const userInfor =  useSelector(state => state.auth)
 const userName = useSelector(state => state.auth.user_name);
 
-
+const navigate = useNavigate()
 
   return(
     <>
@@ -34,7 +35,6 @@ const userName = useSelector(state => state.auth.user_name);
 
       <div className="mypage-user-benefit">
         <ul>
-          <li>알림</li>
           <li>주문내역</li>
           <li>쿠폰</li>
         </ul>
@@ -42,26 +42,30 @@ const userName = useSelector(state => state.auth.user_name);
 
       <hr />
 
-      <div className="mypage-setting-wrap">
-        <div>
+      <ul className="mypage-setting-wrap">
+        <li
+          onClick={()=>navigate(`/notice`)}
+        >
           <p>공지사항</p>
-          <RightBtn />
-        </div>
+          <RightBtn 
+            
+          />
+        </li>
 
-        <div>
+        <li>
           <p>고객센터</p>
           <RightBtn />
-        </div>
+        </li>
 
-        <div>
+        <li>
           <p>환경설정</p>
           <RightBtn />
-        </div>
+        </li>
 
-        <div>
+        <li>
           <p>약관 및 정책</p>
           <RightBtn />
-        </div>
+        </li>
 
         <p>현재 버전 1.0.10</p>
         <button 
@@ -70,8 +74,8 @@ const userName = useSelector(state => state.auth.user_name);
         onClick={()=>{dispatch(logout())}}
       >
         log Out
-      </button>
-      </div>
+        </button>
+      </ul>
 
       </div>
     </>

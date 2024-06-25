@@ -66,6 +66,15 @@ export const Main = () => {
   }
 
 
+  // const searchResultAnswer = searchResults.length > 0
+  // ? fetchingDateList.filter(item =>
+  //     item.accom_name.includes(searchResults) ||
+  //     item.accom_info.includes(searchResults) ||
+  //     item.description.includes(searchResults) ||
+  //     item.province.includes(searchResults)
+  //   )
+  // : fetchingDateList;
+
 let endCommonet;
 if(status==="successful"){
   endCommonet = <p style={{textAlign:"center", color:"#c5c5c5"}}>목록 -끝-</p>
@@ -73,6 +82,12 @@ if(status==="successful"){
     endCommonet = <p style={{textAlign:"center", color:"#c5c5c5"}}>검색 결과가 없습니다.</p>
   }
 }
+
+// const endComment = (
+//   <p style={{ textAlign: "center", color: "#c5c5c5" }}>
+//     {status === "successful" && (searchResultAnswer.length === 0 ? "검색 결과가 없습니다." : "목록 -끝-")}
+//   </p>
+// );
 
   return (
     <>
