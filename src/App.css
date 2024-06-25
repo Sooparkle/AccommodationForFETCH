@@ -126,10 +126,11 @@ border-right: 1px solid var(--color-light); */
   color: #61dafb;
 }
 
-.header-wrap .active{
+.header-wrap .active > svg{
   display: block;
-  color : red
+  stroke : var(--color-main);
 }
+
 .header-wrap svg{
   stroke: #4b4b4b;
   fill: rgba(0, 0, 0, 0);

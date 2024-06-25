@@ -58,14 +58,12 @@ export const Main = () => {
     searchResultAnswer =fetchingDateList.filter(item => 
       item.accom_name.includes(searchResults) ||
       item.accom_info.includes(searchResults) ||
+      item.description.includes(searchResults) ||
       item.province.includes(searchResults) 
     );
   } else{
     searchResultAnswer = fetchingDateList;
   }
-
-  console.log("searchResultAnswer", searchResultAnswer)
-  console.log("searchResultAnswer", searchResultAnswer.length)
 
 
 let endCommonet;

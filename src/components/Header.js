@@ -23,7 +23,8 @@ return(
             <NavLink 
               onClick={()=>dispatch(searchDataSucceess([]))}
               to="/" >
-              <Logo />
+              <Logo 
+              />
             </NavLink>
           </li>
           <li className="header-mypage">
