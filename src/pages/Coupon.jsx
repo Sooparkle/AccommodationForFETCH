@@ -6,12 +6,11 @@ export const Coupon = () =>{
   const navigate = useNavigate();
   const {state} = useLocation();
 
-  console.log("test", state)
 
   return(
     <>
     <main className="main"
-
+      style={{height:"100%"}}
     
     >
       <article className="content-wrap"

@@ -22,7 +22,8 @@ const handleCouponsCount = () => {
         <p>My page</p>
       </div>
 
-      <div className="mypage-user">
+      <div className="mypage-user"
+      >
         <div className="mypage-user-wrap">
           <img src={userInfor?.image} alt="user-image" />
           <span>{userInfor?.user_name} 님</span>

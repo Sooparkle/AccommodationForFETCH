@@ -13,6 +13,7 @@ export const Setting = () =>{
   return(
     <main
       className="main"
+      style={{height:"100vh"}}
     >
       <article
         className="content-wrap"
