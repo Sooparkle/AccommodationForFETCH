@@ -1,21 +1,23 @@
 import { useNavigate } from "react-router-dom"
 import { Footer } from "../components/Footer";
+import { useScrollTop } from "../components/UseScrollTop";
 
 export const Notice = () =>{
 const navigate = useNavigate();
+  useScrollTop();
 
   return(
     <>
     <main className="main">
-      <article className="notice-wrap">
-        <section className="notice-header">
+      <article className="content-wrap">
+        <section className="content-header">
           <h2>
             공지사항
           </h2>
           </section>
           
           <section
-            className="notice-body"
+            className="content-body"
           >
             <section className="notice-table-header">
               <div>번호</div>
@@ -38,7 +40,7 @@ const navigate = useNavigate();
           </section>
 
             <button
-            className="notice-back-btn"
+            className="content-back-btn"
               onClick={()=>navigate('/mypage')}
             >뒤로</button>
 

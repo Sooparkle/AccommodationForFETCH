@@ -12,12 +12,12 @@ export const Mypage = () => {
 
   return (
     <>
-      <div className="main">
+      <main className="main">
         <div className="mypage-wrap">
           {isLoggedIn ? <MyprofileList /> : <LoginForm />}
         </div>
         <Header />
-      </div>
+      </main>
       <Footer />
     </>
   );

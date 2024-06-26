@@ -16,7 +16,7 @@ export const Header = () =>{
   }
 return(
   <>
-    <div className="header-wrap">
+    <header className="header-wrap">
 
         <ul>
           <li className="header-seach">
@@ -33,7 +33,7 @@ return(
               </NavLink>
           </li>
         </ul>
-    </div>
+    </header>
   </>
 )
 }

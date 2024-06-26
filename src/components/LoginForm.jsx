@@ -31,8 +31,8 @@ export const LoginForm = () => {
       })
     };
 
-    const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/login", options);
-    // const response = await fetch("http://localhost:4000/login", options);
+    // const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/login", options);
+    const response = await fetch("http://localhost:4000/login", options);
 
     if(!response.ok){
       throw new Error(`Login failed with status ${response.status}`)
@@ -51,7 +51,7 @@ export const LoginForm = () => {
     }
     catch(error){
       console.error("Fetach failed", error.message)
-      window.alert("아이디 또는 비밀번호를 다시 한번 확인 해주세요.")
+      window.alert("서버에 문제가 생겨 로그인이 할 수 없습니다. 빠른 처리 후 정상 작동할 수 있도록 하겠습니다!")
     }
 
   }

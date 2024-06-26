@@ -10,6 +10,12 @@ const userName = useSelector(state => state.auth.user_name);
 
 const navigate = useNavigate()
 
+console.log("test", userInfor)
+
+
+const handleCouponsCount = () => {
+  window.alert(`${userName}께서는 현재 ${userInfor.coupons.length} 쿠폰을 가지고 있습니다.`)
+}
   return(
     <>
       <div className="mypage-header">
@@ -21,7 +27,9 @@ const navigate = useNavigate()
           <img src={userInfor?.image} alt="user-image" />
           <span>{userInfor?.user_name} 님</span>
           <div className="mypage-user-else">
-            <div>
+            <div
+              
+            >
               <p>예약중인 숙소</p>
               <p>{userInfor?.bookings.length}</p>
             </div>
@@ -30,13 +38,22 @@ const navigate = useNavigate()
               <p>5</p>
             </div>
           </div>
-            <p>(프로필 이미지, 이름, 예약중인 숙소를 제외 나머지 가 데이터)</p>
+
         </div>
 
       <div className="mypage-user-benefit">
         <ul>
-          <li>주문내역</li>
-          <li>쿠폰</li>
+          <button
+          aria-label="주문내역 확인 페이지"
+            className="mypage-user-order"
+            onClick={()=>navigate(`/orders`, { state: userInfor })}
+          >주문내역
+          </button>
+          <button
+            aria-label="쿠폰 확인 페이지"
+            className="mypage-user-coupon"
+            onClick={()=>navigate(`/coupons`, {state : userInfor.coupons})}
+          >쿠폰</button>
         </ul>
       </div>
 
@@ -44,6 +61,8 @@ const navigate = useNavigate()
 
       <ul className="mypage-setting-wrap">
         <li
+          tabIndex={0}
+          role="button"
           onClick={()=>navigate(`/notice`)}
         >
           <p>공지사항</p>
@@ -52,21 +71,32 @@ const navigate = useNavigate()
           />
         </li>
 
-        <li>
-          <p>고객센터</p>
-          <RightBtn />
-        </li>
 
-        <li>
+        <li
+          tabIndex={0}
+          role="button"
+          onClick={()=>navigate(`/setting`)}
+        >
           <p>환경설정</p>
           <RightBtn />
         </li>
 
-        <li>
-          <p>약관 및 정책</p>
+        <li
+          tabIndex={0}
+          role="button"
+          onClick={()=>navigate(`/contract`)}
+        >
+          <p>개인 약관 이용 및 정책</p>
           <RightBtn />
         </li>
 
+        <li
+        >
+          <p>고객센터 ☎️
+            
+          </p>
+          <span>12345-12345</span>
+        </li>
         <p>현재 버전 1.0.10</p>
         <button 
         type="button"

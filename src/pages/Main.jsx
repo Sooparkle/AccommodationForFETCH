@@ -91,7 +91,7 @@ if(status==="successful"){
 
   return (
     <>
-      <div className="main">
+      <main className="main">
         <SearchForm
           searchResults={searchResults}
           setSearchResults={setSearchResults}
@@ -122,7 +122,7 @@ if(status==="successful"){
           {endCommonet}
 
         <Header />
-      </div>
+      </main>
       <Footer />
     </>
   );

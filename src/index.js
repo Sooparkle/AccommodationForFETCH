@@ -12,9 +12,13 @@ import { AccomsDetail } from "./components/AccomsDetail";
 import { BookingConfirm } from "./components/BookingConfirm";
 import { Login } from "./pages/Login";
 import { PAGE_PATHS } from "./constants";
-import { CallbackNaver } from "./components/CallbackNaver";
 import { Main } from "./pages/Main";
 import { Notice } from "./pages/Notice";
+import { Setting } from "./pages/Setting";
+import { Contract } from "./pages/Contract";
+import { Orders } from "./pages/Oders";
+import { Coupon } from "./pages/Coupon";
+
 
 
 const router = createBrowserRouter([
@@ -36,10 +40,6 @@ const router = createBrowserRouter([
     element:<Mypage />,
   },
   {
-    path:`/${PAGE_PATHS.CALLBOOK}`,
-    element: <CallbackNaver />
-  },
-  {
     path:`/${PAGE_PATHS.LOGIN}`,
     element:<Login />
   },
@@ -48,13 +48,20 @@ const router = createBrowserRouter([
     element : <Notice />
   },
   {
-    path :`${PAGE_PATHS.CALLBOOK}`
+    path :`${PAGE_PATHS.SETTING}`,
+    element : <Setting />
   },
   {
-    path :`${PAGE_PATHS.SETTING}`
+    path :`${PAGE_PATHS.CONTRACT}`,
+    element : <Contract />
   },
   {
-    path :`${PAGE_PATHS.CONTRACT}`
+    path :`${PAGE_PATHS.ORDER}`,
+    element : <Orders />
+  },
+  {
+    path :`${PAGE_PATHS.COUPON}`,
+    element : <Coupon />
   },
 ])
 

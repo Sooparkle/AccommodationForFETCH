@@ -10,4 +10,6 @@ export const PAGE_PATHS = {
   CALLCENTRE : `/callcentre`,
   SETTING : `/setting`,
   CONTRACT : '/contract',
+  ORDER : `/orders`,
+  COUPON : `/coupons`,
 }
