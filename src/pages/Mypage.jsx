@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { MyprofileList } from "../components/Myprofile";
-import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { LoginForm } from "../components/LoginForm";
 import { useScrollTop } from "../components/UseScrollTop";
@@ -20,7 +19,6 @@ useScrollTop();
         </div>
         <Header />
       </main>
-      <Footer />
     </>
   );
 };

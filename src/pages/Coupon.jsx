@@ -10,7 +10,7 @@ export const Coupon = () =>{
   return(
     <>
     <main className="main"
-      style={{height:"100%"}}
+      // style={{height:"100%"}}
     
     >
       <article className="content-wrap"
@@ -49,10 +49,11 @@ export const Coupon = () =>{
                       padding:"2rem 0",
                       borderBottom:"1px solid #ccc",
                       display : "flex",
-                      placeItems:"center",
+                      placeItems:"end",
                       placeContent:"center",
                       width:"100%",
-                      height:"100%"
+                      height:"100%",
+                      gap:"2rem"
                     }}
                     key={index}
                   >
@@ -102,7 +103,27 @@ export const Coupon = () =>{
                       }}
                     >{i}</span>
                     </div>
-                    
+                    <div>
+                      <div
+                        style={{
+                          background:"#f1f1f1",
+                          padding:"1rem .5rem",
+                          borderRadius:".4rem"
+
+                        }}
+                      >
+                        좀쉼쉼 숙박 사이트를 자주 이용해주신 고객 한정 전달 제품</div>
+                      <div
+                      style={{
+                        textAlign:"right",
+                        fontWeight:"600",
+                        marginTop:"20px"
+                      }}
+                      >
+                      <span>2024.01.01</span> ~ <span>2024.12.31</span>
+
+                      </div>
+                    </div>
                   </li>
                 )
               }

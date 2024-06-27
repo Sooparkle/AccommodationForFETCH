@@ -73,6 +73,20 @@ border-right: 1px solid var(--color-light); */
 }
 
 
+.main-main{
+  height: 100%;
+  min-width: var(--width-min);
+  max-width: var(--width-max);
+  display: grid;
+  margin-inline: auto;
+  padding-bottom: 68px;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  box-sizing: border-box;
+  box-shadow: 0px 9px 10px 1px rgb(0 0 0 / 15%);
+  /* border-left: 1px solid var(--color-light);
+border-right: 1px solid var(--color-light); */
+}
 
 @media screen and (max-width : 768px){
   .main{

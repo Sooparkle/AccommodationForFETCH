@@ -31,8 +31,8 @@ export const LoginForm = () => {
       })
     };
 
-    // const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/login", options);
-    const response = await fetch("http://localhost:4000/login", options);
+    const response = await fetch("https://port-0-pj3-server-dc9c2nlt7zv05q.sel5.cloudtype.app/login", options);
+    // const response = await fetch("http://localhost:4000/login", options);
 
     if(!response.ok){
       throw new Error(`Login failed with status ${response.status}`)

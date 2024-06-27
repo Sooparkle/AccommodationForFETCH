@@ -91,7 +91,7 @@ if(status==="successful"){
 
   return (
     <>
-      <main className="main">
+      <main className="main-main">
         <SearchForm
           searchResults={searchResults}
           setSearchResults={setSearchResults}

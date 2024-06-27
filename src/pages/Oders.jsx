@@ -1,15 +1,40 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useScrollTop } from "../components/UseScrollTop"
+import React, { useEffect, useState } from "react";
 
 export const Orders = () =>{
   useScrollTop();
   const navigate = useNavigate();
   const {state} = useLocation();
 
+
+  // const [sortedBookings, setSortedBookings] = useState([]);
+
+  // useEffect(() => {
+  //   if (state?.bookings) {
+  //     const today = new Date();
+  //     const sorted = [...state.bookings].sort((a, b) => {
+  //       const dateA = new Date(a.start_date);
+  //       const dateB = new Date(b.start_date);
+  //       return Math.abs(dateB - today) - Math.abs(dateA - today);
+  //     });
+  //     setSortedBookings(sorted);
+  //   }
+  // }, [state]);
+
+
+  const today = new Date();
+
+  const sorted = state?.bookings.toSorted((a,b)=> {
+    const dateA = new Date(a.start_date);
+    const dateB = new Date(b.start_date);
+    return Math.abs(dateA - today) - Math.abs(dateB - today);
+  });
+  
+
   return(
     <>
     <main className="main"
-    style={{height:"100%"}}
     
     >
       <article className="content-wrap"
@@ -46,7 +71,7 @@ export const Orders = () =>{
 
           <ul>
             {
-              state?.bookings.map((i,index) => {
+              sorted.map((i,index) => {
                 return(
                   <li
                     style={{
@@ -61,7 +86,7 @@ export const Orders = () =>{
                   >
                     <div
                       style={{flex: 1}}
-                    >{index+1}. {i.accom_name}</div>
+                    >{sorted.length - index}. {i.accom_name}</div>
                     <div
                       style={{flex: 2, textAlign:"center"}}
                     >

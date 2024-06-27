@@ -10,12 +10,7 @@ const userName = useSelector(state => state.auth.user_name);
 
 const navigate = useNavigate()
 
-console.log("test", userInfor)
 
-
-const handleCouponsCount = () => {
-  window.alert(`${userName}께서는 현재 ${userInfor.coupons.length} 쿠폰을 가지고 있습니다.`)
-}
   return(
     <>
       <div className="mypage-header">

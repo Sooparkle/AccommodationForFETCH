@@ -8,7 +8,9 @@ const navigate = useNavigate();
 
   return(
     <>
-    <main className="main">
+    <main className="main"
+      style={{height:"100vh"}}
+    >
       <article className="content-wrap">
         <section className="content-header">
           <h2>
