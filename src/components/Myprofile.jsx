@@ -86,13 +86,20 @@ const navigate = useNavigate()
           <RightBtn />
         </li>
 
-        <li
+        <div
+          style={{
+            display:"flex",
+            justifyContent: "space-between",
+            placeItems:"center",
+            padding : "1.2rem 0",
+            borderBottom : "1px solid #c9c9c9"
+          }}
         >
           <p>고객센터 ☎️
             
           </p>
-          <span>12345-12345</span>
-        </li>
+          <span>1588-7070</span>
+        </div>
         <p>현재 버전 1.0.10</p>
         <button 
         type="button"

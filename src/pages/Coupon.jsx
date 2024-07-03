@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useScrollTop } from "../components/UseScrollTop"
+import { Footer } from "../components/Footer";
 
 export const Coupon = () =>{
   useScrollTop();
@@ -10,7 +11,7 @@ export const Coupon = () =>{
   return(
     <>
     <main className="main"
-      // style={{height:"100%"}}
+      style={{height:"100%"}}
     
     >
       <article className="content-wrap"
@@ -140,6 +141,7 @@ export const Coupon = () =>{
 
       </article>
     </main>
+    <Footer />
     </>
   )
 }

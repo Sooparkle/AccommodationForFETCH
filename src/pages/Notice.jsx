@@ -9,7 +9,7 @@ const navigate = useNavigate();
   return(
     <>
     <main className="main"
-      style={{height:"100vh"}}
+      style={{height:"100%"}}
     >
       <article className="content-wrap">
         <section className="content-header">
@@ -68,6 +68,7 @@ const navigate = useNavigate();
 
       </article>
     </main>
+    <Footer />
     </>
   )
 }

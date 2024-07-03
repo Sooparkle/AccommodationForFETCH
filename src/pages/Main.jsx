@@ -91,7 +91,11 @@ if(status==="successful"){
 
   return (
     <>
-      <main className="main-main">
+      <main className="main-main"
+      style={{
+        height : status==='successful' ? "100%" : "100vh"
+      }}
+      >
         <SearchForm
           searchResults={searchResults}
           setSearchResults={setSearchResults}
@@ -123,7 +127,7 @@ if(status==="successful"){
 
         <Header />
       </main>
-      <Footer />
+      { status==='successful' && <Footer />}
     </>
   );
 };
